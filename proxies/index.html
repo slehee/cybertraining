@@ -1,0 +1,1941 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Web Proxies - PNPT</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 0 1 .25-.25h5.025a.25.25 0 0 1 .177.073l6.25 6.25a.25.25 0 0 1 0 .354l-5.025 5.025a.25.25 0 0 1-.354 0l-6.25-6.25a.25.25 0 0 1-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775zM6 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 0 1 .25-.25h8.5a.25.25 0 0 1 .25.25v7.736a.75.75 0 1 0 1.5 0V1.75A1.75 1.75 0 0 0 11.25 0h-8.5A1.75 1.75 0 0 0 1 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 0 0 0-1.5H2.75a.25.25 0 0 1-.25-.25V1.75zM4.75 4a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5zM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75zm11.774 3.537a.75.75 0 0 0-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 0 0-1.062 1.058l1.943 1.95a.75.75 0 0 0 1.055.008l4.557-4.45z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm6.5-.25A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75zM8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.489 4.489 0 0 1-.563-1.191 3.833 3.833 0 0 1-.05-2.063 4.636 4.636 0 0 1-2.025-.293.75.75 0 1 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.748.748 0 0 1 1.06 0 .75.75 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.404 2.404 0 0 1-.507-.441 3.063 3.063 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.753.753 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768a85.08 85.08 0 0 0-.317-.265c-.814-.68-1.75-1.462-2.692-2.619a3.74 3.74 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm9 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 0 1 9 6.25c0 .177-.04.264-.077.318a.956.956 0 0 1-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 0 0-.313.195 2.416 2.416 0 0 0-.692.661.75.75 0 0 0 1.248.832.956.956 0 0 1 .276-.245 6.3 6.3 0 0 1 .26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 0 0 8 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 1 0 1.342.67z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.404 12.596a6.5 6.5 0 1 1 9.192-9.192 6.5 6.5 0 0 1-9.192 9.192zM2.344 2.343a8 8 0 1 0 11.313 11.314A8 8 0 0 0 2.343 2.343zM6.03 4.97a.75.75 0 0 0-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 1 0 1.06 1.06L8 9.06l1.97 1.97a.75.75 0 1 0 1.06-1.06L9.06 8l1.97-1.97a.75.75 0 1 0-1.06-1.06L8 6.94 6.03 4.97z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 0 0-.01.004L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.02.02 0 0 0-.004-.009.02.02 0 0 0-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.492 3.492 0 0 1 2.441 0l.999-1a.75.75 0 1 1 1.06 1.061l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.013 5.013 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.684 1.684 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06zM6.173 5h3.654A.173.173 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173zM5.25 6.5a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75h-5.5z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458L5 5.782zM9.5 2.5h-3V6a.75.75 0 0 1-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6V2.5zm-6.9 9.847L3.775 10.5h8.45l1.175 1.847a.75.75 0 0 1-.633 1.153H3.233a.75.75 0 0 1-.633-1.153z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 2.5a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H1.75zm4 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zm0 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zM2.5 7.75a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0v-6z"/></svg>');}</style>
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web-proxies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PNPT" class="md-header__button md-logo" aria-label="PNPT" data-md-component="logo">
+      
+  <img src="../assets/bb.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PNPT
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web Proxies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      PNPT Live
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        Networking Refresher
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../bash/" class="md-tabs__link">
+        Bash
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../5/" class="md-tabs__link">
+      5-stages
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../en/" class="md-tabs__link">
+      Scaninng & Enumeration
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../exp/" class="md-tabs__link">
+      Exploitation Basics
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../bb/" class="md-tabs__link md-tabs__link--active">
+        Boug Bounty
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PNPT" class="md-nav__button md-logo" aria-label="PNPT" data-md-component="logo">
+      
+  <img src="../assets/bb.png" alt="logo">
+
+    </a>
+    PNPT
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        PNPT Live
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Networking Refresher
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking Refresher" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Networking Refresher
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        Linux & Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subneting/" class="md-nav__link">
+        Subneting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux101/" class="md-nav__link">
+        Linux 101 Stuff
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Bash
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bash" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Bash
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bash/" class="md-nav__link">
+        Bash
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Intro-To-Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        5-stages
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../en/" class="md-nav__link">
+        Scaninng & Enumeration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp/" class="md-nav__link">
+        Exploitation Basics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Boug Bounty
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Boug Bounty" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Boug Bounty
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bb/" class="md-nav__link">
+        Bounty101
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_apps/" class="md-nav__link">
+        Web Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_req/" class="md-nav__link">
+        Web Requests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Web Proxies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Web Proxies
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-proxies" class="md-nav__link">
+    Web Proxies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-web-proxies" class="md-nav__link">
+    What Are Web Proxies?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uses-of-web-proxies" class="md-nav__link">
+    Uses of Web Proxies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burp-suite" class="md-nav__link">
+    Burp Suite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#owasp-zed-attack-proxy-zap" class="md-nav__link">
+    OWASP Zed Attack Proxy (ZAP)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    Setting Up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zap" class="md-nav__link">
+    ZAP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-configured-browser" class="md-nav__link">
+    Pre-Configured Browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-setup" class="md-nav__link">
+    Proxy Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-ca-certificate" class="md-nav__link">
+    Installing CA Certificate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intercepting-web-requests" class="md-nav__link">
+    Intercepting Web Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Intercepting Web Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#burp" class="md-nav__link">
+    Burp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zap_1" class="md-nav__link">
+    ZAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intercepting-responses" class="md-nav__link">
+    Intercepting Responses
+  </a>
+  
+    <nav class="md-nav" aria-label="Intercepting Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#burp_1" class="md-nav__link">
+    Burp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zap_2" class="md-nav__link">
+    ZAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-modification" class="md-nav__link">
+    Automatic Modification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-request-modification" class="md-nav__link">
+    Automatic Request Modification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burp-match-and-replace" class="md-nav__link">
+    Burp Match and Replace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-response-modification" class="md-nav__link">
+    Automatic Response Modification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeating-requests" class="md-nav__link">
+    Repeating Requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-history" class="md-nav__link">
+    Proxy History
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeating-requests_1" class="md-nav__link">
+    Repeating Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Repeating Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zap_3" class="md-nav__link">
+    ZAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encodingdecoding" class="md-nav__link">
+    Encoding/Decoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-encoding" class="md-nav__link">
+    URL Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decoding" class="md-nav__link">
+    Decoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-proxychains" class="md-nav__link">
+    Intro to Proxychains
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxying-tools" class="md-nav__link">
+    Proxying Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxychains-features" class="md-nav__link">
+    PROXYCHAINS FEATURES
+  </a>
+  
+    <nav class="md-nav" aria-label="PROXYCHAINS FEATURES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    NMAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metasploit" class="md-nav__link">
+    Metasploit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burp-intruder" class="md-nav__link">
+    Burp Intruder
+  </a>
+  
+    <nav class="md-nav" aria-label="Burp Intruder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positions" class="md-nav__link">
+    Positions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payloads" class="md-nav__link">
+    Payloads
+  </a>
+  
+    <nav class="md-nav" aria-label="Payloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payload-sets" class="md-nav__link">
+    Payload Sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-options" class="md-nav__link">
+    Payload Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-processing" class="md-nav__link">
+    Payload Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-encoding" class="md-nav__link">
+    Payload Encoding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack" class="md-nav__link">
+    Attack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zap-fuzzer" class="md-nav__link">
+    ZAP Fuzzer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuzz" class="md-nav__link">
+    Fuzz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burp-scanner" class="md-nav__link">
+    Burp Scanner
+  </a>
+  
+    <nav class="md-nav" aria-label="Burp Scanner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zap-scanner" class="md-nav__link">
+    ZAP Scanner
+  </a>
+  
+    <nav class="md-nav" aria-label="ZAP Scanner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spider" class="md-nav__link">
+    Spider
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http_code/" class="md-nav__link">
+        HTTP Status Codes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-proxies" class="md-nav__link">
+    Web Proxies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-web-proxies" class="md-nav__link">
+    What Are Web Proxies?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uses-of-web-proxies" class="md-nav__link">
+    Uses of Web Proxies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burp-suite" class="md-nav__link">
+    Burp Suite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#owasp-zed-attack-proxy-zap" class="md-nav__link">
+    OWASP Zed Attack Proxy (ZAP)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    Setting Up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zap" class="md-nav__link">
+    ZAP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-configured-browser" class="md-nav__link">
+    Pre-Configured Browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-setup" class="md-nav__link">
+    Proxy Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-ca-certificate" class="md-nav__link">
+    Installing CA Certificate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intercepting-web-requests" class="md-nav__link">
+    Intercepting Web Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Intercepting Web Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#burp" class="md-nav__link">
+    Burp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zap_1" class="md-nav__link">
+    ZAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intercepting-responses" class="md-nav__link">
+    Intercepting Responses
+  </a>
+  
+    <nav class="md-nav" aria-label="Intercepting Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#burp_1" class="md-nav__link">
+    Burp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zap_2" class="md-nav__link">
+    ZAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-modification" class="md-nav__link">
+    Automatic Modification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-request-modification" class="md-nav__link">
+    Automatic Request Modification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burp-match-and-replace" class="md-nav__link">
+    Burp Match and Replace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-response-modification" class="md-nav__link">
+    Automatic Response Modification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeating-requests" class="md-nav__link">
+    Repeating Requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-history" class="md-nav__link">
+    Proxy History
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeating-requests_1" class="md-nav__link">
+    Repeating Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Repeating Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zap_3" class="md-nav__link">
+    ZAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encodingdecoding" class="md-nav__link">
+    Encoding/Decoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-encoding" class="md-nav__link">
+    URL Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decoding" class="md-nav__link">
+    Decoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-proxychains" class="md-nav__link">
+    Intro to Proxychains
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxying-tools" class="md-nav__link">
+    Proxying Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxychains-features" class="md-nav__link">
+    PROXYCHAINS FEATURES
+  </a>
+  
+    <nav class="md-nav" aria-label="PROXYCHAINS FEATURES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    NMAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metasploit" class="md-nav__link">
+    Metasploit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burp-intruder" class="md-nav__link">
+    Burp Intruder
+  </a>
+  
+    <nav class="md-nav" aria-label="Burp Intruder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positions" class="md-nav__link">
+    Positions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payloads" class="md-nav__link">
+    Payloads
+  </a>
+  
+    <nav class="md-nav" aria-label="Payloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payload-sets" class="md-nav__link">
+    Payload Sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-options" class="md-nav__link">
+    Payload Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-processing" class="md-nav__link">
+    Payload Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-encoding" class="md-nav__link">
+    Payload Encoding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack" class="md-nav__link">
+    Attack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zap-fuzzer" class="md-nav__link">
+    ZAP Fuzzer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuzz" class="md-nav__link">
+    Fuzz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burp-scanner" class="md-nav__link">
+    Burp Scanner
+  </a>
+  
+    <nav class="md-nav" aria-label="Burp Scanner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zap-scanner" class="md-nav__link">
+    ZAP Scanner
+  </a>
+  
+    <nav class="md-nav" aria-label="ZAP Scanner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spider" class="md-nav__link">
+    Spider
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Web Proxies</h1>
+
+<h3 id="web-proxies">Web Proxies</h3>
+<p>Today, most modern web and mobile applications work by continuously connecting to back-end servers to send and receive data and then processing this data on the user&rsquo;s device, like their web browsers or mobile phones. With most applications heavily relying on back-end servers to process data, testing and securing the back-end servers is quickly becoming more important.</p>
+<p>Testing web requests to back-end servers make up the bulk of Web Application Penetration Testing, which includes concepts that apply to both web and mobile applications. To capture the requests and traffic passing between applications and back-end servers and manipulate these types of requests for testing purposes, we need to use Web Proxies.</p>
+<h3 id="what-are-web-proxies">What Are Web Proxies?</h3>
+<p>Web proxies are specialized tools that can be set up between a browser/mobile application and a back-end server to capture and view all the web requests being sent between both ends, essentially acting as man-in-the-middle (MITM) tools.</p>
+<h3 id="uses-of-web-proxies">Uses of Web Proxies</h3>
+<ul>
+<li>Web application vulnerability scanning</li>
+<li>Web fuzzing</li>
+<li>Web crawling</li>
+<li>Web application mapping</li>
+<li>Web request analysis</li>
+<li>Web configuration testing</li>
+<li>Code reviews</li>
+</ul>
+<h3 id="burp-suite">Burp Suite</h3>
+<p><a href="https://portswigger.net/burp">Burp Suite (Burp)</a> <code>-pronounced Burp Sweet</code>- is the most common web proxy for web penetration testing. It has an excellent user interface for its various features and even provides a built-in Chromium browser to test web applications. Certain Burp features are only available in the commercial version Burp Pro/Enterprise, but even the free version is an extremely powerful testing tool to keep in our arsenal.</p>
+<p>Some of the <code>paid-only</code> features are:</p>
+<ul>
+<li>Active web app scanner</li>
+<li>Fast Burp Intruder</li>
+<li>The ability to load certain Burp Extensions</li>
+</ul>
+<p>The community free version of Burp Suite should be enough for most penetration testers. Once we start more advanced web application penetration testing, the pro features may become handy. Most of the features we will cover in this module are available in the community free version of Burp Suite, but we will also touch upon some of the pro features, like the Active Web App Scanner.</p>
+<p>Tip: If you have an educational or business email address, then you can apply for a free trial of Burp Pro at this link to be able to follow along with some of the Burp Pro only features showcased later in this module.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have an educational or business email address, then you can apply for a free trial of Burp Pro at this <a href="https://portswigger.net/burp/pro/trial">link</a> to be able to follow along with some of the Burp Pro only features showcased later in this module.</p>
+</div>
+<h3 id="owasp-zed-attack-proxy-zap">OWASP Zed Attack Proxy (ZAP)</h3>
+<p><a href="https://www.zaproxy.org/">OWASP Zed Attack Proxy (ZAP)</a> is another common web proxy tool for web penetration testing. ZAP is a free and open-source project initiated by the <a href="https://owasp.org/">Open Web Application Security Project (OWASP)</a> and maintained by the community, so it has no paid-only features as Burp does. It has grown significantly over the past few years and is quickly gaining market recognition as the leading open-source web proxy tool.</p>
+<p>In the end, learning both tools can be quite similar and will provide us with options for every situation through a web pentest, and we can choose to use whichever one we find more suitable for our needs. In some instances, we may not see enough value to justify a paid Burp subscription, and we may switch ZAP to have a completely open and free experience. In other situations where we want a more mature solution for advanced pentests or corporate pentesting, we may find the value provided by Burp Pro to be justified and may switch to Burp for these features.</p>
+<h3 id="setting-up">Setting Up</h3>
+<p>Once we start up Burp, we are prompted to create a new project. If we are running the community version, we would only be able to use temporary projects without the ability to save our progress and carry on later:</p>
+<p><img alt="burp1" src="../img/burp_project_community.jpg" />
+If we are using the pro/enterprise version, we will have the option to either start a new project or open an existing project.
+<img alt="burp2" src="../img/burp_project_prof.jpg" /></p>
+<p>We may need to save our progress if we were pentesting huge web applications or running an <code>Active Web Scan</code>. However, we may not need to save our progress and, in many cases, can start a <code>temporar</code>y project every time.</p>
+<p>So, let&rsquo;s select <code>temporary</code> project, and click continue. Once we do, we will be prompted to either use <code>Burp Default Configurations</code>, or to <code>Load a Configuration File</code>, and we&rsquo;ll choose the first option:
+<img alt="burp3" src="../img/burp_project_config.jpg" /></p>
+<h3 id="zap">ZAP</h3>
+<p>We can download ZAP from its <a href="https://www.zaproxy.org/download/">download page</a>, choose the installer that fits our operating system, and follow the basic installation instructions to get it installed.</p>
+<p>To get started with ZAP, we can launch it from the terminal with the <code>zaproxy</code> command or access it from the application menu like Burp.</p>
+<p><img alt="zap1" src="../img/zap_new_project.jpg" /></p>
+<h3 id="pre-configured-browser">Pre-Configured Browser</h3>
+<p>To use the tools as web proxies, we must configure our browser proxy settings to use them as the proxy or use the pre-configured browser. Both tools have a pre-configured browser that comes with pre-configured proxy settings and the CA certificates pre-installed, making starting a web penetration test very quick and easy.</p>
+<p>In Burp&rsquo;s <code>(Proxy&gt;Intercept)</code>, we can click on <code>Open Browser</code>, which will open Burp&rsquo;s pre-configured browser, and automatically route all web traffic through Burp: 
+<img alt="burp4" src="../img/burp_preconfigured_browser.jpg" /></p>
+<p>In ZAP, we can click on the Firefox browser icon at the end of the top bar, and it will open the pre-configured browser:</p>
+<p><img alt="zap2" src="../img/zap_preconfigured_browser.jpg" /></p>
+<h3 id="proxy-setup">Proxy Setup</h3>
+<p>In many cases, we may want to use a real browser for pentesting, like Firefox. To use Firefox with our web proxy tools, we must first configure it to use them as the proxy. We can manually go to Firefox preferences and set up the proxy to use the web proxy listening port. Both Burp and ZAP use port <code>8080</code> by default, but we can use any available port. If we choose a port that is in use, the proxy will fail to start, and we will receive an error message.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>In case we wanted to serve the web proxy on a different port, we can do that in Burp under (Proxy&gt;Options), or in ZAP under (Tools&gt;Options&gt;Local Proxies). In both cases, we must ensure that the proxy configured in Firefox uses the same port.</p>
+<p>Instead of manually switching the proxy, we can utilize the Firefox extension <code>Foxy Proxy</code> to easily and quickly change the Firefox proxy.</p>
+<p>Once we have the extension added, we can configure the web proxy on it by clicking on its icon on Firefox top bar and then choosing options:
+<img alt="foxy" src="../img/foxyproxy_options.jpg" /></p>
+<p>Once we&rsquo;re on the <code>options</code> page, we can click on <code>add</code> on the left pane, and then use <code>127.0.0.1</code> as the <code>IP</code>, and <code>8080</code> as the port, and name it<code>Burp</code> or <code>ZAP</code>:
+<img alt="foxy_add" src="../img/foxyproxy_add.jpg" /></p>
+<h3 id="installing-ca-certificate">Installing CA Certificate</h3>
+<p>Another important step when using Burp Proxy/ZAP with our browser is to install the web proxy&rsquo;s CA Certificates. If we don&rsquo;t do this step, some HTTPS traffic may not get properly routed, or we may need to click <code>accept</code> every time Firefox needs to send an HTTPS request.</p>
+<p>We can install Burp&rsquo;s certificate once we select Burp as our proxy in <code>Foxy Proxy</code>, by browsing to <code>http://burp</code>, and download the certificate from there by clicking on <code>CA Certificate</code>:</p>
+<p><img alt="burp_cert" src="../img/burp_cert.jpg" /></p>
+<p>To get ZAP&rsquo;s certificate, we can go to <code>(Tools&gt;Options&gt;Dynamic SSL Certificate)</code>, then click on <code>Save</code>:</p>
+<p><img alt="zap_cert" src="../img/zap_cert.jpg" /></p>
+<p>We can also change our certificate by generating a new one with the <code>Generate</code> button.</p>
+<p>Once we have our certificates, we can install them within Firefox by browsing to <code>about:preferences#privacy</code>, scrolling to the bottom, and clicking View <code>Certificates</code>:
+<img alt="firefox_xert" src="../img/firefox_cert.jpg" /></p>
+<p>After that, we can select the <code>Authorities</code>tab, and then click on <code>import</code>, and select the downloaded CA certificate:
+<img alt="firefox_import" src="../img/firefox_import_cert.jpg" /></p>
+<p>Finally, we must select <code>Trust this CA</code> to identify websites and <code>Trust this CA to identify email users</code>, and then click OK: 
+<img alt="firefox_trust" src="../img/firefox_trust_cert.jpg" /></p>
+<p>Once we install the certificate and configure the Firefox proxy, all Firefox web traffic will start routing through our web proxy.</p>
+<h3 id="intercepting-web-requests">Intercepting Web Requests</h3>
+<p>Now that we have set up our proxy, we can use it to intercept and manipulate various HTTP requests sent by the web application we are testing. We&rsquo;ll start by learning how to intercept web requests, change them, and then send them through to their intended destination.</p>
+<h4 id="burp">Burp</h4>
+<p>In Burp, we can navigate to the <code>Proxy</code> tab, and request interception should be on by default. If we want to turn request interception on or off, we may go to the <code>Intercept</code> sub-tab and click on <code>Intercept is on/off</code> button to do so:
+<img alt="burp_int" src="../img/burp_intercept_htb_on.jpg" /></p>
+<h4 id="zap_1">ZAP</h4>
+<p>In ZAP, interception is off by default, as shown by the green button on the top bar (green indicates that requests can pass and not be intercepted). We can click on this button to turn the Request Interception on or off, or we can use the shortcut [CTRL+B] to toggle it on or off:</p>
+<p><img alt="zap_cap" src="../img/zap_intercept_htb_on.jpg" /></p>
+<h3 id="intercepting-responses">Intercepting Responses</h3>
+<p>In some instances, we may need to intercept the HTTP responses from the server before they reach the browser. This can be useful when we want to change how a specific web page looks, like enabling certain disabled fields or showing certain hidden fields, which may help us in our penetration testing activities.</p>
+<h4 id="burp_1">Burp</h4>
+<p>In Burp, we can enable response interception by going to <code>(Proxy&gt;Options)</code> and enabling <code>Intercept Response</code> under <code>Intercept Server Responses</code>:
+<img alt="resp_intre_enabled" src="../img/response_interception_enable.jpg" /></p>
+<p>After that, we can enable request interception once more and refresh the page with [CTRL+SHIFT+R] in our browser (to force a full refresh). When we go back to Burp, we should see the intercepted request, and we can click on forward. Once we forward the request, we&rsquo;ll see our intercepted response:</p>
+<h4 id="zap_2">ZAP</h4>
+<p>Let&rsquo;s try to see how we can do the same with ZAP, when our requests are intercepted by ZAP, we can click on <code>Step</code>, and it will send the request and automatically intercept the response:
+<img alt="zap_inter" src="../img/zap_response_intercept_response.jpg" /></p>
+<p>However, ZAP HUD also has another powerful feature that can help us in cases like this. While in many instances we may need to intercept the response to make custom changes, if all we wanted was to enable disabled input fields or show hidden input fields, then we can click on the third button on the left (the light bulb icon), and it will enable/show these fields without us having to intercept the response or refresh the page.</p>
+<h3 id="automatic-modification">Automatic Modification</h3>
+<p>We may want to apply certain modifications to all outgoing HTTP requests or all incoming HTTP responses in certain situations. In these cases, we can utilize automatic modifications based on rules we set, so the web proxy tools will automatically apply them.</p>
+<h3 id="automatic-request-modification">Automatic Request Modification</h3>
+<p>We can choose to match any text within our requests, either in the request header or request body, and then replace them with different text.</p>
+<h3 id="burp-match-and-replace">Burp Match and Replace</h3>
+<p>We can go to <code>(Proxy&gt;Options&gt;Match and Replace)</code> and click on <code>Add</code> in Burp. As the below screenshot shows, we will set the following options:</p>
+<p><img alt="burp_match" src="../img/burp_match_replace_user_agent_1.jpg" /></p>
+<p>Once we enter the above options and click Ok, our new Match and Replace option will be added and enabled and will start automatically replacing the User-Agent header in our requests with our new User-Agent. We can verify that by visiting any website using the pre-configured Burp browser and reviewing the intercepted request. We will see that our User-Agent has indeed been automatically replaced:</p>
+<p><img alt="burpmatchreplace" src="../img/burp_match_replace_user_agent_2.jpg" /></p>
+<h3 id="automatic-response-modification">Automatic Response Modification</h3>
+<p>Go to <code>(Proxy&gt;Options&gt;Match and Replace)</code> in Burp to add another rule. This time we will use the type of Response body since the change we want to make exists in the response&rsquo;s body and not in its headers. In this case, we do not have to use regex as we know the exact string we want to replace, though it is possible to use regex to do the same thing if we prefer.</p>
+<p><img alt="replace response" src="../img/burp_match_replace_response_1.jpg" /></p>
+<h3 id="repeating-requests">Repeating Requests</h3>
+<p>We successfully bypassed the input validation to use a non-numeric input to reach <code>command injection</code> on the remote server.</p>
+<p>As you can imagine, if we would do this for each command, it would take us forever to enumerate a system, as each command would require 5-6 steps to get executed. However, for such repetitive tasks, we can utilize request repeating to make this process significantly easier.</p>
+<p>Request repeating allows us to resend any web request that has previously gone through the web proxy.</p>
+<p>This allows us to make quick changes to any request before we send it, then get the response within our tools without intercepting and modifying each request.</p>
+<h3 id="proxy-history">Proxy History</h3>
+<p>To start, we can view the HTTP requests history in <code>Burp</code> at <code>(Proxy&gt;HTTP History)</code>:
+<img alt="bup history" src="../img/burp_history_tab.jpg" /></p>
+<p>In ZAP HUD, we can find it in the bottom History pane or ZAP&rsquo;s main UI at the bottom History tab as well:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>Both tools also maintain WebSockets history, which shows all connections initiated by the web application even after being loaded, like asynchronous updates and data fetching. WebSockets can be useful when performing advanced web penetration testing, and are out of the scope of this module.</p>
+<p>If we click on any request in the history in either tool, its details will be shown:</p>
+<p><img alt="burp_details" src="../img/burp_history_details.jpg" /></p>
+<h3 id="repeating-requests_1">Repeating Requests</h3>
+<p>Once we locate the request we want to repeat, we can click [CTRL+R] in Burp to send it to the <code>Repeater</code> tab, and then we can either navigate to the Repeater tab or click [CTRL+SHIFT+R] to go to it directly. Once in <code>Repeater</code>, we can click on <code>Send</code> to send the request:</p>
+<p><img alt="burp repeater req" src="../img/burp_repeater_request.jpg" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+</div>
+<p>We can also right-click on the request and select Change Request Method to change the HTTP method between POST/GET without having to rewrite the entire request.</p>
+<h4 id="zap_3">ZAP</h4>
+<p>In ZAP, once we locate our request, we can right-click on it and select Open/Resend with Request Editor, which would open the request editor window, and allow us to resend the request with the Send button to send our request: </p>
+<p><img alt="zap" src="../img/zap_repeater_request.jpg" /></p>
+<p>We can also see the <code>Method</code> drop-down menu, allowing us to quickly switch the request method to any other HTTP method.</p>
+<h3 id="encodingdecoding">Encoding/Decoding</h3>
+<p>As we modify and send custom HTTP requests, we may have to perform various types of encoding and decoding to interact with the webserver properly. Both tools have built-in encoders that can help us in quickly encoding and decoding various types of text.</p>
+<h3 id="url-encoding">URL Encoding</h3>
+<p>It is essential to ensure that our request data is URL-encoded and our request headers are correctly set. Otherwise, we may get a server error in the response. This is why encoding and decoding data becomes essential as we modify and repeat web requests. Some of the key characters we need to encode are:</p>
+<ul>
+<li><code>Spaces</code>: May indicate the end of request data if not encoded</li>
+<li><code>&amp;</code>: Otherwise interpreted as a parameter delimiter</li>
+<li><code>#</code>: Otherwise interpreted as a fragment identifier</li>
+</ul>
+<p>To URL-encode text in Burp Repeater, we can select that text and right-click on it, then select (<code>Convert Selection&gt;URL&gt;URL encode key characters</code>), or by selecting the text and clicking <code>[CTRL+U]</code>. Burp also supports URL-encoding as we type if we right-click and enable that option, which will encode all of our text as we type it. On the other hand, ZAP should automatically URL-encode all of our request data in the background before sending the request, though we may not see that explicitly.</p>
+<p>There are other types of URL-encoding, like Full URL-Encoding or Unicode URL encoding, which may also be helpful for requests with many special characters.</p>
+<h3 id="decoding">Decoding</h3>
+<p>While URL-encoding is key to HTTP requests, it is not the only type of encoding we will encounter. It is very common for web applications to encode their data, so we should be able to quickly decode that data to examine the original text. On the other hand, back-end servers may expect data to be encoded in a particular format or with a specific encoder, so we need to be able to quickly encode our data before we send it.</p>
+<p>The following are some of the other types of encoders supported by both tools:</p>
+<p>While URL-encoding is key to HTTP requests, it is not the only type of encoding we will encounter. It is very common for web applications to encode their data, so we should be able to quickly decode that data to examine the original text. On the other hand, back-end servers may expect data to be encoded in a particular format or with a specific encoder, so we need to be able to quickly encode our data before we send it.</p>
+<p>The following are some of the other types of encoders supported by both tools:</p>
+<ul>
+<li>HTML</li>
+<li>Unicode</li>
+<li>Base64</li>
+<li>ASCII hex</li>
+</ul>
+<p>For example, perhaps we came across the following cookie that is base64 encoded, and we need to decode it: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>eyJ1c2VybmFtZSI6Imd1ZXN0IiwgImlzX2FkbWluIjpmYWxzZX0=
+</code></pre></div>
+<img alt="burp-decde" src="../img/burp_b64_decode.jpg" /></p>
+<p>In recent versions of Burp, we can also use the <code>Burp Inspector</code> tool to perform encoding and decoding (among other things), which can be found in various places like Burp Proxy or Burp Repeater:</p>
+<p><img alt="b_inspector" src="../img/burp_inspector.jpg" /></p>
+<h3 id="encoding">Encoding</h3>
+<p>As we can see, the text holds the value <code>{"username":"guest", "is_admin":false}</code>. So, if we were performing a penetration test on a web application and find that the cookie holds this value, we may want to test modifying it to see whether it changes our user privileges. 
+So, we can copy the above value, change <code>guest</code> to <code>admin</code> and <code>false</code> to <code>true</code>, and try to encode it again using its original encoding method (<code>base64</code>):</p>
+<p><strong>Decode the flag</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>base64 and URL</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>VTJ4U1VrNUZjRlZXVkVKTFZrWkdOVk5zVW10aFZYQlZWRmh3UzFaR2NITlRiRkphWld0d1ZWUllaRXRXUm10M1UyeFNUbVZGY0ZWWGJYaExWa1V3ZVZOc1VsZGlWWEJWVjIxNFMxWkZNVFJUYkZKaFlrVndWVmR0YUV0V1JUQjNVMnhTYTJGM1BUMD0=
+</code></pre></div>
+<h3 id="intro-to-proxychains">Intro to Proxychains</h3>
+<h3 id="proxying-tools">Proxying Tools</h3>
+<p>An important aspect of using web proxies is enabling the interception of web requests made by command-line tools and thick client applications. This gives us transparency into the web requests made by these applications and allows us to utilize all of the different proxy features we have used with web applications.</p>
+<p>To route all web requests made by a specific tool through our web proxy tools, we have to set them up as the tool&rsquo;s proxy (i.e. <code>http://127.0.0.1:8080</code>), similarly to what we did with our browsers. Each tool may have a different method for setting its proxy, so we may have to investigate how to do so for each one.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Proxying tools usually slows them down, therefore, only proxy tools when you need to investigate their requests, and not for normal usage</p>
+</div>
+<ul>
+<li>Tor and <a href="https://www.geeksforgeeks.org/how-to-setup-proxychains-in-linux-without-any-errors/">proxychains</a>   </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use tor proxy with a vpn  If your choise in NordVpn, the form the terminal use <code>--legacy</code> with nordvpn login.</p>
+</div>
+<h3 id="proxychains-features">PROXYCHAINS FEATURES</h3>
+<ul>
+<li>Support SOCKS5, SOCKS4, and HTTP CONNECT proxy servers.</li>
+<li>Proxychains can be mixed up with a different proxy types in a list</li>
+<li>Proxychains also supports any kinds of chaining option methods, like: random, which takes a random proxy in the list stored in a configuration file, or chaining proxies in the exact order list, different proxies are separated by a new line in a file. There is also a dynamic option, that lets Proxychains go through the live only proxies, it will exclude the dead or unreachable proxies, the dynamic option often called smart option.</li>
+<li>Proxychains can be used with servers, like squid, sendmail, etc.</li>
+<li>Proxychains is capable to do DNS resolving through proxy.</li>
+<li>Proxychains can handle any TCP client application, ie., nmap, telnet.</li>
+</ul>
+<p><strong>PROXYCHAINS SYNTAX</strong></p>
+<p>Add command “proxychains” for every job, that means we enable Proxychains service. For example, we want to scan available hosts and its ports in our network using Nmap using Proxychains the command should look like this:</p>
+<h4 id="nmap">NMAP</h4>
+<p><code>proxychains nmap 192.168.1.1/24</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Slehee@htb[/htb]$ nmap -h | grep -i prox
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  --proxies &lt;url1,[url2],...&gt;: Relay connections through HTTP/SOCKS4 proxies
+</code></pre></div>
+<p>As we can see, we can use the <code>--proxies</code> flag. We should also add the <code>-Pn</code> flag to skip host discovery (as recommended on the man page). Finally, we&rsquo;ll also use the <code>-sC</code> flag to examine what an nmap script scan does:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Slehee@htb[/htb]$ nmap --proxies http://127.0.0.1:8080 SERVER_IP -pPORT -Pn -sC
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Starting Nmap 7.91 ( https://nmap.org )
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Nmap scan report for SERVER_IP
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Host is up (0.11s latency).
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>PORT      STATE SERVICE
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>PORT/tcp open  unknown
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Nmap done: 1 IP address (1 host up) scanned in 0.49 seconds
+</code></pre></div>
+<img alt="proxy namap" src="../img/proxying_nmap.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nmap&rsquo;s built-in proxy is still in its experimental phase, as mentioned by its manual (man nmap), so not all functions or traffic may be routed through the proxy. In these cases, we can simply resort to proxychains, as we did earlier.
+<code>proxychains nmap 192.168.1.1/24</code></p>
+</div>
+<p>Proxychains configuration file located on <code>/etc/proxychains.conf</code></p>
+<p>By default proxychains directly sends the traffic first through our host at 127.0.0.1 on port 9050 (the default Tor configuration). If you are using Tor, leave this as it is. If you are not using Tor, you will need to comment out this line.</p>
+<p>We should also enable <code>Quiet Mode</code> to reduce noise by un-commenting <code>quiet_mode</code>. Once that&rsquo;s done, we can prepend <code>proxychains</code> to any command, and the traffic of that command should be routed through <code>proxychains</code> (i.e., our web proxy). For example, let&rsquo;s try using cURL on one of our previous exercises:</p>
+<h4 id="metasploit">Metasploit</h4>
+<p>Finally, let&rsquo;s try to proxy web traffic made by Metasploit modules to better investigate and debug them. We should begin by starting Metasploit with <code>msfconsole</code>. Then, to set a <code>proxy</code> for any exploit within Metasploit, we can use the set <code>PROXIES</code> flag. Let&rsquo;s try the robots_txt scanner as an example and run it against one of our previous exercises:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Slehee@htb[/htb]$ msfconsole
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>msf6 &gt; use auxiliary/scanner/http/robots_txt
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>msf6 auxiliary(scanner/http/robots_txt) &gt; set PROXIES HTTP:127.0.0.1:8080
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>PROXIES =&gt; HTTP:127.0.0.1:8080
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>msf6 auxiliary(scanner/http/robots_txt) &gt; set RHOST SERVER_IP
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>RHOST =&gt; SERVER_IP
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>msf6 auxiliary(scanner/http/robots_txt) &gt; set RPORT PORT
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>RPORT =&gt; PORT
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>msf6 auxiliary(scanner/http/robots_txt) &gt; run
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>[*] Scanned 1 of 1 hosts (100% complete)
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>[*] Auxiliary module execution completed
+</code></pre></div>
+<p><img alt="proxy_msf" src="../img/proxying_msf.jpg" /></p>
+<p>We can similarly use our web proxies with other tools and applications, including scripts and thick clients. All we have to do is set the proxy of each tool to use our web proxy. This allows us to examine exactly what these tools are sending and receiving and potentially repeat and modify their requests while performing web application penetration testing.</p>
+<h3 id="burp-intruder">Burp Intruder</h3>
+<p>Both Burp and ZAP provide additional features other than the default web proxy, which are essential for web application penetration testing. Two of the most important extra features are <code>web fuzzers</code> and<code>web scanners</code>. The built-in web fuzzers are powerful tools that act as web fuzzing, enumeration, and brute-forcing tools. This may also act as an alternative for many of the CLI-based fuzzers we use, like <code>ffuf</code>, <code>dirbuster</code>, <code>gobuster</code>, <code>wfuzz</code>, among others.</p>
+<p>Burp&rsquo;s web fuzzer is called <code>Burp Intruder</code>, and can be used to fuzz pages, directories, sub-domains, parameters, parameters values, and many other things. Though it is much more advanced than most CLI-based web fuzzing tools, the free <code>Burp Community</code> version is throttled at a speed of 1 request per second, making it extremely slow compared to CLI-based web fuzzing tools, which can usually read up to 10k requests per second. This is why we would only use the free version of Burp Intruder for short queries. The <code>Pro</code> version has unlimited speed, which can rival common web fuzzing tools, in addition to the very useful features of Burp Intruder. This makes it one of the best web fuzzing and brute-forcing tools.</p>
+<p>We can then go to Intruder by clicking on its tab or with the shortcut [CTRL+SHIFT+I], which takes us right to Burp Intruder:</p>
+<h4 id="positions">Positions</h4>
+<p>The  tab, &lsquo;Positions&rsquo;, is where we place the payload position pointer, which is the point where words from our wordlist will be placed and iterated over. We will be demonstrating how to fuzz web directories, which is similar to what&rsquo;s done by tools like ffuf or gobuster.</p>
+<p>To check whether a web directory exists, our fuzzing should be in &lsquo;GET /DIRECTORY/&rsquo;, such that existing pages would return 200 OK, otherwise we&rsquo;d get 404 NOT FOUND. So, we will need to select DIRECTORY as the payload position, by either wrapping it with § or by selecting the word DIRECTORY and clicking on the the Add § button:
+<img alt="burp-int-pos" src="../img/burp_intruder_position.jpg" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>the DIRECTORY in this case is the pointer&rsquo;s name, which can be anything, and can be used to refer to each pointer, in case we are using more than position with different wordlists for each.</p>
+</div>
+<p>The final thing to select in the target tab is the Attack Type. The attack type defines how many payload pointers are used and determines which payload is assigned to which position. For simplicity, we&rsquo;ll stick to the first type, Sniper, which uses only one position. Try clicking on the ? at the top of the window to read more about attack types, or check out this <a href="https://portswigger.net/burp/documentation/desktop/tools/intruder/positions#attack-type">link</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be sure to leave the extra two lines at the end of the request, otherwise we may get an error response from the server.</p>
+</div>
+<h4 id="payloads">Payloads</h4>
+<p>The  <code>Payloads</code> tab, we get to choose and customize our payloads/wordlists. This payload/wordlist is what would be iterated over, and each element/line of it would be placed and tested one by one in the Payload Position we chose earlier. There are four main things we need to configure:</p>
+<ul>
+<li>Payload Sets</li>
+<li>Payload Options</li>
+<li>Payload Processing</li>
+<li>Payload Encoding</li>
+</ul>
+<h5 id="payload-sets">Payload Sets</h5>
+<p>The first thing we must configure is the <code>Payload Set</code>. The payload set identifies the Payload number, depending on the attack type and number of Payloads we used in the Payload Position Pointers:
+<img alt="payload set" src="../img/burp_intruder_payload_set.jpg" /></p>
+<p>In this case, we only have one Payload Set, as we chose the <code>Sniper Attack type with only one payload position. If we have chosen the</code>Cluster Bomb` attack type, for example, and added several payload positions, we would get more payload sets to choose from and choose different options for each. In our case, we&rsquo;ll select 1 for the payload set.</p>
+<p>Next, we need to select the <code>Payload Type</code>, which is the type of payloads/wordlists we will be using. Burp provides a variety of Payload Types, each of which acts in a certain way. For example:</p>
+<ul>
+<li>
+<p>Simple List: The basic and most fundamental type. We provide a wordlist, and Intruder iterates over each line in it.</p>
+</li>
+<li>
+<p>Runtime file: Similar to Simple List, but loads line-by-line as the scan runs to avoid excessive memory usage by Burp.</p>
+</li>
+<li>
+<p>Character Substitution: Lets us specify a list of characters and their replacements, and Burp Intruder tries all potential permutations.</p>
+</li>
+</ul>
+<h5 id="payload-options">Payload Options</h5>
+<p>Next, we must specify the Payload Options, which is different for each <code>Payload Type</code> we select in <code>Payload Sets</code>. For a <code>Simple List</code>, we have to create or load a wordlist. To do so, we can input each item manually by clicking <code>Add</code>, which would build our wordlist on the fly. The other more common option is to click on <code>Load</code>, and then select a file to load into Burp Intruder.</p>
+<p>We will select <code>/opt/useful/SecLists/Discovery/Web-Content/common.txt</code> as our wordlist. We can see that Burp Intruder loads all lines of our wordlist into the Payload Options table:
+<img alt="int-wordlist" src="../img/burp_intruder_payload_wordlist.jpg" /></p>
+<p>We can add another wordlist or manually add a few items, and they would be appended to the same list of items. We can use this to combine multiple wordlists or create customized wordlists. In Burp Pro, we also can select from a list of existing wordlists contained within Burp by choosing from the Add from list menu option.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In case you wanted to use a very large wordlist, it&rsquo;s best to use Runtime file as the Payload Type instead of Simple List, so that Burp Intruder won&rsquo;t have to load the entire wordlist in advance, which may throttle memory usage.</p>
+</div>
+<h5 id="payload-processing">Payload Processing</h5>
+<p>Another option we can apply is <code>Payload Processing</code>, which allows us to determine fuzzing rules over the loaded wordlist. For example, if we wanted to add an extension after our payload item, or if we wanted to filter the wordlist based on specific criteria, we can do so with payload processing.</p>
+<p>Let&rsquo;s try adding a rule that skips any lines that start with a . (as shown in the wordlist screenshot earlier). We can do that by clicking on the <code>Add</code> button and then selecting <code>Skip if matches regex</code>, which allows us to provide a regex pattern for items we want to skip. Then, we can provide a regex pattern that matches lines starting with ., which is: <code>^\..*$</code>:
+<img alt="intruder" src="../img/burp_intruder_payload_processing_1.jpg" /></p>
+<h5 id="payload-encoding">Payload Encoding</h5>
+<p>The fourth and final option we can apply is Payload Encoding, enabling us to enable or disable Payload URL-encoding.</p>
+<p><img alt="encoding" src="../img/burp_intruder_payload_encoding.jpg" /></p>
+<h4 id="options">Options</h4>
+<p>Finally, we can customize our attack options from the <code>Options</code> tab. There are many options we can customize (or leave at default) for our attack. For example, we can set the number of <code>retried on failure</code> and <code>pause before retry</code> to 0.</p>
+<p>Another useful option is the <code>Grep</code> - Match, which enables us to flag specific requests depending on their responses. As we are fuzzing web directories, we are only interested in responses with HTTP code <code>200 OK</code>. So, we&rsquo;ll first enable it and then click Clear to clear the current list. After that, we can type 200 OK to match any requests with this string and click Add to add the new rule. Finally, we&rsquo;ll also disable <code>Exclude HTTP Headers</code>, as what we are looking for is in the HTTP header:
+<img alt="match" src="../img/burp_intruder_options_match.jpg" /></p>
+<h4 id="attack">Attack</h4>
+<p>Now that everything is properly set up, we can click on the <code>Start Attack</code> button and wait for our attack to finish. Once again, in the free Community Version, these attacks would be very slow and take a considerable amount of time for longer wordlists.</p>
+<h3 id="zap-fuzzer">ZAP Fuzzer</h3>
+<p>ZAP&rsquo;s Fuzzer is called (ZAP Fuzzer). It can be very powerful for fuzzing various web end-points, though it is missing some of the features provided by Burp Intruder. ZAP Fuzzer, however, does not throttle the fuzzing speed, which makes it much more useful than Burp&rsquo;s free Intruder.</p>
+<h3 id="fuzz">Fuzz</h3>
+<p>To start our fuzzing, we will visit the URL from the exercise at the end of this section to capture a sample request. As we will be fuzzing for directories, let&rsquo;s visit <code>&lt;http://SERVER_IP:PORT/test/&gt;</code> to place our fuzzing location on <code>test</code> later on. Once we locate our request in the proxy history, we will right-click on it and select (<code>Attack&gt;Fuzz</code>), which will open the <code>Fuzzer</code> window:</p>
+<p>The main options we need to configure for our Fuzzer attack are:</p>
+<ul>
+<li>Fuzz Location</li>
+<li>Payloads</li>
+<li>Processors</li>
+<li>Options</li>
+</ul>
+<h3 id="burp-scanner">Burp Scanner</h3>
+<p>An essential feature of web proxy tools is their web scanners. Burp Suite comes with <code>Burp Scanner</code>, a powerful scanner for various types of web vulnerabilities, using a <code>Crawler</code> for building the website structure, and <code>Scanner</code> for passive and active scanning.</p>
+<p>Burp Scanner is a Pro-Only feature, and it is not available in the free Community version of Burp Suite. However, given the wide scope that Burp Scanner covers and the advanced features it includes, it makes it an enterprise-level tool, and as such, it is expected to be a paid feature.</p>
+<h4 id="zap-scanner">ZAP Scanner</h4>
+<p>ZAP also comes bundled with a Web Scanner similar to Burp Scanner. ZAP Scanner is capable of building site maps using ZAP Spider and performing both passive and active scans to look for various types of vulnerabilities.</p>
+<h5 id="spider">Spider</h5>
+<p>Let&rsquo;s start with ZAP Spider, which is similar to the Crawler feature in Burp. To start a Spider scan on any website, we can locate a request from our History tab and select (Attack&gt;Spider) from the right-click menu.</p>
+<p>Another option is to use the HUD in the pre-configured browser. Once we visit the page or website we want to start our Spider scan on, we can click on the second button on the right pane (Spider Start), which would prompt us to start the scan.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When we click on the Spider button, ZAP may tell us that the current website is not in our scope, and will ask us to automatically add it to the scope before starting the scan, to which we can say &lsquo;Yes&rsquo;. The Scope is the set of URLs ZAP will test if we start a generic scan, and it can be customized by us to scan multiple websites and URLs. Try to add multiple targets to the scope to see how the scan would run differently.</p>
+</div>
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../web_req/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Web Requests" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Web Requests
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../http_code/" class="md-footer__link md-footer__link--next" aria-label="Next: HTTP Status Codes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              HTTP Status Codes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 slehee
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.tabs"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

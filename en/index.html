@@ -1,0 +1,1271 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Scaninng & Enumeration - PNPT</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 0 1 .25-.25h5.025a.25.25 0 0 1 .177.073l6.25 6.25a.25.25 0 0 1 0 .354l-5.025 5.025a.25.25 0 0 1-.354 0l-6.25-6.25a.25.25 0 0 1-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775zM6 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 0 1 .25-.25h8.5a.25.25 0 0 1 .25.25v7.736a.75.75 0 1 0 1.5 0V1.75A1.75 1.75 0 0 0 11.25 0h-8.5A1.75 1.75 0 0 0 1 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 0 0 0-1.5H2.75a.25.25 0 0 1-.25-.25V1.75zM4.75 4a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5zM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75zm11.774 3.537a.75.75 0 0 0-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 0 0-1.062 1.058l1.943 1.95a.75.75 0 0 0 1.055.008l4.557-4.45z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm6.5-.25A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75zM8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.489 4.489 0 0 1-.563-1.191 3.833 3.833 0 0 1-.05-2.063 4.636 4.636 0 0 1-2.025-.293.75.75 0 1 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.748.748 0 0 1 1.06 0 .75.75 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.404 2.404 0 0 1-.507-.441 3.063 3.063 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.753.753 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768a85.08 85.08 0 0 0-.317-.265c-.814-.68-1.75-1.462-2.692-2.619a3.74 3.74 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm9 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 0 1 9 6.25c0 .177-.04.264-.077.318a.956.956 0 0 1-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 0 0-.313.195 2.416 2.416 0 0 0-.692.661.75.75 0 0 0 1.248.832.956.956 0 0 1 .276-.245 6.3 6.3 0 0 1 .26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 0 0 8 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 1 0 1.342.67z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.404 12.596a6.5 6.5 0 1 1 9.192-9.192 6.5 6.5 0 0 1-9.192 9.192zM2.344 2.343a8 8 0 1 0 11.313 11.314A8 8 0 0 0 2.343 2.343zM6.03 4.97a.75.75 0 0 0-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 1 0 1.06 1.06L8 9.06l1.97 1.97a.75.75 0 1 0 1.06-1.06L9.06 8l1.97-1.97a.75.75 0 1 0-1.06-1.06L8 6.94 6.03 4.97z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 0 0-.01.004L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.02.02 0 0 0-.004-.009.02.02 0 0 0-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.492 3.492 0 0 1 2.441 0l.999-1a.75.75 0 1 1 1.06 1.061l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.013 5.013 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.684 1.684 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06zM6.173 5h3.654A.173.173 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173zM5.25 6.5a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75h-5.5z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458L5 5.782zM9.5 2.5h-3V6a.75.75 0 0 1-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6V2.5zm-6.9 9.847L3.775 10.5h8.45l1.175 1.847a.75.75 0 0 1-.633 1.153H3.233a.75.75 0 0 1-.633-1.153z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 2.5a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H1.75zm4 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zm0 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zM2.5 7.75a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0v-6z"/></svg>');}</style>
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#starting-with-kioptrix" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PNPT" class="md-header__button md-logo" aria-label="PNPT" data-md-component="logo">
+      
+  <img src="../assets/bb.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PNPT
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scaninng & Enumeration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      PNPT Live
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        Networking Refresher
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../bash/" class="md-tabs__link">
+        Bash
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../5/" class="md-tabs__link">
+      5-stages
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Scaninng & Enumeration
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../exp/" class="md-tabs__link">
+      Exploitation Basics
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../bb/" class="md-tabs__link">
+        Boug Bounty
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PNPT" class="md-nav__button md-logo" aria-label="PNPT" data-md-component="logo">
+      
+  <img src="../assets/bb.png" alt="logo">
+
+    </a>
+    PNPT
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        PNPT Live
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Networking Refresher
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking Refresher" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Networking Refresher
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        Linux & Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subneting/" class="md-nav__link">
+        Subneting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux101/" class="md-nav__link">
+        Linux 101 Stuff
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Bash
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bash" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Bash
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bash/" class="md-nav__link">
+        Bash
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Intro-To-Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        5-stages
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Scaninng & Enumeration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Scaninng & Enumeration
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-with-kioptrix" class="md-nav__link">
+    Starting with Kioptrix
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting with Kioptrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaning-with-nmap" class="md-nav__link">
+    Scaning with Nmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-nikto" class="md-nav__link">
+    Use of Nikto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirbuster" class="md-nav__link">
+    Dirbuster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerating-smb" class="md-nav__link">
+    Enumerating SMB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerating-ssh" class="md-nav__link">
+    Enumerating SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-potential-vulnerabilities" class="md-nav__link">
+    Research Potential Vulnerabilities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp/" class="md-nav__link">
+        Exploitation Basics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Boug Bounty
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Boug Bounty" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Boug Bounty
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bb/" class="md-nav__link">
+        Bounty101
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_apps/" class="md-nav__link">
+        Web Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_req/" class="md-nav__link">
+        Web Requests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxies/" class="md-nav__link">
+        Web Proxies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http_code/" class="md-nav__link">
+        HTTP Status Codes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-with-kioptrix" class="md-nav__link">
+    Starting with Kioptrix
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting with Kioptrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaning-with-nmap" class="md-nav__link">
+    Scaning with Nmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-nikto" class="md-nav__link">
+    Use of Nikto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirbuster" class="md-nav__link">
+    Dirbuster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerating-smb" class="md-nav__link">
+    Enumerating SMB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerating-ssh" class="md-nav__link">
+    Enumerating SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-potential-vulnerabilities" class="md-nav__link">
+    Research Potential Vulnerabilities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Scaninng & Enumeration</h1>
+
+<h2 id="starting-with-kioptrix">Starting with Kioptrix</h2>
+<p>ptrix <a href="https://tcm-sec.com/kioptrix">Download</a></p>
+<p><a href="https://www.vulnhub.com/">Vulnhub</a> for more VM&rsquo;s to test.</p>
+<h3 id="scaning-with-nmap">Scaning with Nmap</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Arp scan: arp-scan -l</p>
+<p>Netdiscover: netdiscover -r 192.168.57.0/24</p>
+<p>r -range</p>
+</div>
+<p>nmap &ndash;help</p>
+<p>nmap vuln script location <code>/usr/share/nmap/scripts</code></p>
+<p>nmap &ndash;scripts script-name -v ip</p>
+<p>nmap -sV -A &ndash;script vuln -p 80,21 192.168.57.7</p>
+<p>nmpa -T4 (speed 1-5)
+     -p- all ports 
+     -A evertyhing</p>
+<p>└─# nmap -T4 -p- -A 192.168.57.4 (kioptrix machine)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Script wih python: nmap scan all ports  then results scan with -A (all)</p>
+</div>
+<p>Nmap results on Kioptrix:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Starting Nmap 7.92 ( https://nmap.org ) at 2022-11-05 13:33 GMT
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Nmap scan report for 192.168.57.4
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Host is up (0.00062s latency).
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Not shown: 65529 closed tcp ports (reset)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>PORT      STATE SERVICE     VERSION
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>22/tcp    open  ssh         OpenSSH 2.9p2 (protocol 1.99)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>|_sshv1: Server supports SSHv1
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>| ssh-hostkey: 
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>|   1024 b8:74:6c:db:fd:8b:e6:66:e9:2a:2b:df:5e:6f:64:86 (RSA1)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>|   1024 8f:8e:5b:81:ed:21:ab:c1:80:e1:57:a3:3c:85:c4:71 (DSA)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>|_  1024 ed:4e:a9:4a:06:14:ff:15:14:ce:da:3a:80:db:e2:81 (RSA)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>80/tcp    open  http        Apache httpd 1.3.20 ((Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>|_http-server-header: Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>|_http-title: Test Page for the Apache Web Server on Red Hat Linux
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>| http-methods: 
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>|_  Potentially risky methods: TRACE
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>111/tcp   open  rpcbind     2 (RPC #100000)
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>| rpcinfo: 
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>|   program version    port/proto  service
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>|   100000  2            111/tcp   rpcbind
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>|   100000  2            111/udp   rpcbind
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>|   100024  1          32768/tcp   status
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>|_  100024  1          32768/udp   status
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>139/tcp   open  netbios-ssn Samba smbd (workgroup: MYGROUP)
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>443/tcp   open  ssl/https   Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>| ssl-cert: Subject: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>| Not valid before: 2009-09-26T09:32:06
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>|_Not valid after:  2010-09-26T09:32:06
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>|_http-server-header: Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>|_ssl-date: 2022-11-05T18:34:02+00:00; +5h00m05s from scanner time.
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>|_http-title: 400 Bad Request
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>| sslv2: 
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>|   SSLv2 supported
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>|   ciphers: 
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>|     SSL2_RC4_128_EXPORT40_WITH_MD5
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>|     SSL2_RC4_128_WITH_MD5
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>|     SSL2_RC2_128_CBC_WITH_MD5
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>|     SSL2_DES_64_CBC_WITH_MD5
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>|_    SSL2_RC4_64_WITH_MD5
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>32768/tcp open  status      1 (RPC #100024)
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>MAC Address: 08:00:27:AF:7E:E7 (Oracle VirtualBox virtual NIC)
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>Device type: general purpose
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>Running: Linux 2.4.X
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>OS CPE: cpe:/o:linux:linux_kernel:2.4
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>OS details: Linux 2.4.9 - 2.4.18 (likely embedded)
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>Network Distance: 1 hop
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>Host script results:
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>|_smb2-time: Protocol negotiation failed (SMB2)
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>|_clock-skew: 5h00m04s
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>|_nbstat: NetBIOS name: KIOPTRIX, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>TRACEROUTE
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>HOP RTT     ADDRESS
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>1   0.62 ms 192.168.57.4
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>Nmap done: 1 IP address (1 host up) scanned in 26.64 seconds
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>zsh: segmentation fault  nmap -T4 -p- -A 192.168.57.4
+</code></pre></div>
+<p>Methodology:</p>
+<p>Start with 80;443;139 </p>
+<p>Steps:</p>
+<p>Ports: 80 and  443 first.</p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>Default Apache webpage. Client hygiene </p>
+</div>
+<p>Information Disclosure:</p>
+<p><img alt="kiopt1" src="../img/kioptix1.png" /></p>
+<h3 id="use-of-nikto">Use of Nikto</h3>
+<p><code>nikto -h &lt;host&gt;</code></p>
+<p><strong> Good beginer tool </strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Good WAF would block it</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nikto -h http://192.168.57.4 
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- Nikto v2.1.6
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>---------------------------------------------------------------------------
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>+ Target IP:          192.168.57.4
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>+ Target Hostname:    192.168.57.4
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>+ Target Port:        80
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>+ Start Time:         2022-11-05 14:37:50 (GMT0)
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>---------------------------------------------------------------------------
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>+ Server: Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>+ Server may leak inodes via ETags, header found with file /, inode: 34821, size: 2890, mtime: Thu Sep  6 04:12:46 2001
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>+ The anti-clickjacking X-Frame-Options header is not present.
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>+ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>+ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>+ OSVDB-27487: Apache is vulnerable to XSS via the Expect header
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>+ OpenSSL/0.9.6b appears to be outdated (current is at least 1.1.1). OpenSSL 1.0.0o and 0.9.8zc are also current.
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>+ mod_ssl/2.8.4 appears to be outdated (current is at least 2.8.31) (may depend on server version)
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>+ Apache/1.3.20 appears to be outdated (current is at least Apache/2.4.37). Apache 2.2.34 is the EOL for the 2.x branch.
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>+ OSVDB-838: Apache/1.3.20 - Apache 1.x up 1.2.34 are vulnerable to a remote DoS and possible code execution. CAN-2002-0392.
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>+ OSVDB-4552: Apache/1.3.20 - Apache 1.3 below 1.3.27 are vulnerable to a local buffer overflow which allows attackers to kill any process on the system. CAN-2002-0839.
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>+ OSVDB-2733: Apache/1.3.20 - Apache 1.3 below 1.3.29 are vulnerable to overflows in mod_rewrite and mod_cgi. CAN-2003-0542.
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>+ mod_ssl/2.8.4 - mod_ssl 2.8.7 and lower are vulnerable to a remote buffer overflow which may allow a remote shell. http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0082, OSVDB-756.
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>+ Allowed HTTP Methods: GET, HEAD, OPTIONS, TRACE 
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>+ OSVDB-877: HTTP TRACE method is active, suggesting the host is vulnerable to XST
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>+ ///etc/hosts: The server install allows reading of any system file by adding an extra &#39;/&#39; to the URL.
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>+ OSVDB-682: /usage/: Webalizer may be installed. Versions lower than 2.01-09 vulnerable to Cross Site Scripting (XSS).
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>+ OSVDB-3268: /manual/: Directory indexing found.
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>+ OSVDB-3092: /manual/: Web server manual found.
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>+ OSVDB-3268: /icons/: Directory indexing found.
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>+ OSVDB-3233: /icons/README: Apache default file found.
+</code></pre></div>
+<p>Example to exploit:</p>
+<p><code>mod_ssl/2.8.4 - mod_ssl 2.8.7 and lower are vulnerable to a remote buffer overflow which may allow a remote shell. http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0082, OSVDB-756.</code></p>
+<h3 id="dirbuster">Dirbuster</h3>
+<p><strong>Alternatives</strong></p>
+<ul>
+<li>dirbuster</li>
+<li>dirb</li>
+<li>gobuster</li>
+</ul>
+<p><img alt="dirbuster" src="../img/dirb.png" /></p>
+<p>Use: php,txt,zip,pdf,docx as extension if needed</p>
+<p>Wordlist:
+<code>/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt</code></p>
+<p>Checking one othe results:</p>
+<p>Another information disclosure:</p>
+<p><img alt="dirb2" src="../img/dirb2.png" /></p>
+<p>Webaizer Version 2.01 :http://192.168.57.4/usage/usage_200909.html</p>
+<h3 id="enumerating-smb">Enumerating SMB</h3>
+<p>Using Metasploit: <code>msfconsole</code>
+Auxiliary &ndash;&gt; Scaning and Enumeration modules</p>
+<p>search smb_version</p>
+<p>use auxiliary/scanner/smb/smb_version </p>
+<p>info</p>
+<p>set </p>
+<p>run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>msf6 auxiliary(scanner/smb/smb_version) &gt; info
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>       Name: SMB Version Detection
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>     Module: auxiliary/scanner/smb/smb_version
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    License: Metasploit Framework License (BSD)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>       Rank: Normal
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Provided by:
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  hdm &lt;x@hdm.io&gt;
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  Spencer McIntyre
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  Christophe De La Fuente
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Check supported:
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  No
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Basic options:
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  Name     Current Setting  Required  Description
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>  ----     ---------------  --------  -----------
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  RHOSTS                    yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wiki
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                                      /Using-Metasploit
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  THREADS  1                yes       The number of concurrent threads (max one per host)
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>Description:
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>  Fingerprint and display version information about SMB servers. 
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  Protocol information and host operating system (if available) will 
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  be reported. Host operating system detection requires the remote 
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>  server to support version 1 of the SMB protocol. Compression and 
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>  encryption capability negotiation is only present in version 3.1.1.
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>msf6 auxiliary(scanner/smb/smb_version) &gt; options
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>Module options (auxiliary/scanner/smb/smb_version):
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>   Name     Current Setting  Required  Description
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>   ----     ---------------  --------  -----------
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>   RHOSTS                    yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wik
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>                                       i/Using-Metasploit
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>   THREADS  1                yes       The number of concurrent threads (max one per host)
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>msf6 auxiliary(scanner/smb/smb_version) &gt; set RHOST 192.168.57.4
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>RHOST =&gt; 192.168.57.4
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>msf6 auxiliary(scanner/smb/smb_version) &gt; run 
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>[*] 192.168.57.4:139      - SMB Detected (versions:) (preferred dialect:) (signatures:optional)
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>[*] 192.168.57.4:139      -   Host could not be identified: Unix (Samba 2.2.1a)
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>[*] 192.168.57.4:         - Scanned 1 of 1 hosts (100% complete)
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>[*] Auxiliary module execution completed
+</code></pre></div></p>
+<ul>
+<li>Using <code>smbclient</code> to check anonimus access</li>
+</ul>
+<p>Syntax: smbclient -L \\IP</p>
+<p><img alt="smbcl" src="../img/smbclient.png" /></p>
+<h3 id="enumerating-ssh">Enumerating SSH</h3>
+<p>Looking fro a banner to see if any data is exposed or not.</p>
+<h3 id="research-potential-vulnerabilities">Research Potential Vulnerabilities</h3>
+<p>Google</p>
+<p>On terminal <code>searchsploit</code> (dont be to specific) ex: Samba 2</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>┌──(root💀kali)-[/home/slehee]
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>└─# searchsploit Samba 2             
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>--------------------------------------------------------------------------------- ---------------------------------
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a> Exploit Title                                                                   |  Path
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>--------------------------------------------------------------------------------- ---------------------------------
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Microsoft Windows XP/2003 - Samba Share Resource Exhaustion (Denial of Service)  | windows/dos/148.sh
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Samba 1.9.19 - &#39;Password&#39; Remote Buffer Overflow                                 | linux/remote/20308.c
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Samba 2.0.7 - SWAT Logfile Permissions                                           | linux/local/20341.sh
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Samba 2.0.7 - SWAT Logging Failure                                               | unix/remote/20340.c
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Samba 2.0.7 - SWAT Symlink (1)                                                   | linux/local/20338.c
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Samba 2.0.7 - SWAT Symlink (2)                                                   | linux/local/20339.sh
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Samba 2.0.x - Insecure TMP File Symbolic Link                                    | linux/local/20776.c
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Samba 2.0.x/2.2 - Arbitrary File Creation                                        | unix/remote/20968.txt
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Samba 2.2.0 &lt; 2.2.8 (OSX) - trans2open Overflow (Metasploit)                     | osx/remote/9924.rb
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Samba 2.2.2 &lt; 2.2.6 - &#39;nttrans&#39; Remote Buffer Overflow (Metasploit) (1)          | linux/remote/16321.rb
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>Samba 2.2.8 (BSD x86) - &#39;trans2open&#39; Remote Overflow (Metasploit)                | bsd_x86/remote/16880.rb
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Samba 2.2.8 (Linux Kernel 2.6 / Debian / Mandrake) - Share Privilege Escalation  | linux/local/23674.txt
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>Samba 2.2.8 (Linux x86) - &#39;trans2open&#39; Remote Overflow (Metasploit)              | linux_x86/remote/16861.rb
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>Samba 2.2.8 (OSX/PPC) - &#39;trans2open&#39; Remote Overflow (Metasploit)                | osx_ppc/remote/16876.rb
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>Samba 2.2.8 (Solaris SPARC) - &#39;trans2open&#39; Remote Overflow (Metasploit)          | solaris_sparc/remote/16330.rb
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>Samba 2.2.8 - Brute Force Method Remote Command Execution                        | linux/remote/55.c
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>Samba 2.2.x - &#39;call_trans2open&#39; Remote Buffer Overflow (1)                       | unix/remote/22468.c
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>Samba 2.2.x - &#39;call_trans2open&#39; Remote Buffer Overflow (2)                       | unix/remote/22469.c
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>Samba 2.2.x - &#39;call_trans2open&#39; Remote Buffer Overflow (3)                       | unix/remote/22470.c
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>Samba 2.2.x - &#39;call_trans2open&#39; Remote Buffer Overflow (4)                       | unix/remote/22471.txt
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>Samba 2.2.x - &#39;nttrans&#39; Remote Overflow (Metasploit)                             | linux/remote/9936.rb
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>Samba 2.2.x - CIFS/9000 Server A.01.x Packet Assembling Buffer Overflow          | unix/remote/22356.c
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>Samba 2.2.x - Remote Buffer Overflow                                             | linux/remote/7.pl
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>Samba 3.0.20 &lt; 3.0.25rc3 - &#39;Username&#39; map script&#39; Command Execution (Metasploit) | unix/remote/16320.rb
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>Samba 3.0.21 &lt; 3.0.24 - LSA trans names Heap Overflow (Metasploit)               | linux/remote/9950.rb
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>Samba 3.0.24 (Linux) - &#39;lsa_io_trans_names&#39; Heap Overflow (Metasploit)           | linux/remote/16859.rb
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>Samba 3.0.24 (Solaris) - &#39;lsa_io_trans_names&#39; Heap Overflow (Metasploit)         | solaris/remote/16329.rb
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>Samba 3.0.27a - &#39;send_mailslot()&#39; Remote Buffer Overflow                         | linux/dos/4732.c
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>Samba 3.0.29 (Client) - &#39;receive_smb_raw()&#39; Buffer Overflow (PoC)                | multiple/dos/5712.pl
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>Samba 3.3.12 (Linux x86) - &#39;chain_reply&#39; Memory Corruption (Metasploit)          | linux_x86/remote/16860.rb
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>Samba 3.4.16/3.5.14/3.6.4 - SetInformationPolicy AuditEventsInfo Heap Overflow ( | linux/remote/21850.rb
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>Samba 3.4.7/3.5.1 - Denial of Service                                            | linux/dos/12588.txt
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>Samba 3.5.0 - Remote Code Execution                                              | linux/remote/42060.py
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>Samba 3.5.0 &lt; 4.4.14/4.5.10/4.6.4 - &#39;is_known_pipename()&#39; Arbitrary Module Load  | linux/remote/42084.rb
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>Samba 3.5.22/3.6.17/4.0.8 - nttrans Reply Integer Overflow                       | linux/dos/27778.txt
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>Samba 4.5.2 - Symlink Race Permits Opening Files Outside Share Directory         | multiple/remote/41740.txt
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>Samba &lt; 2.0.5 - Local Overflow                                                   | linux/local/19428.c
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>Samba &lt; 2.2.8 (Linux/BSD) - Remote Code Execution                                | multiple/remote/10.c
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>Samba &lt; 2.2.8 (Linux/BSD) - Remote Code Execution                                | multiple/remote/10.c
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>Samba &lt; 3.0.20 - Remote Heap Overflow                                            | linux/remote/7701.txt
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>Samba &lt; 3.0.20 - Remote Heap Overflow                                            | linux/remote/7701.txt
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>Samba &lt; 3.6.2 (x86) - Denial of Service (PoC)                                    | linux_x86/dos/36741.py
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>Sambar FTP Server 6.4 - &#39;SIZE&#39; Remote Denial of Service                          | windows/dos/2934.php
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>Sambar Server 4.1 Beta - Admin Access                                            | cgi/remote/20570.txt
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>Sambar Server 4.2 Beta 7 - Batch CGI                                             | windows/remote/19761.txt
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>Sambar Server 4.3/4.4 Beta 3 - Search CGI                                        | windows/remote/20223.txt
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>Sambar Server 4.4/5.0 - &#39;pagecount&#39; File Overwrite                               | multiple/remote/21026.txt
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>Sambar Server 4.x/5.0 - Insecure Default Password Protection                     | multiple/remote/21027.txt
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>Sambar Server 5.1 - Sample Script Denial of Service                              | windows/dos/21228.c
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>Sambar Server 5.1 - Script Source Disclosure                                     | cgi/remote/21390.txt
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>Sambar Server 5.x - &#39;results.stm&#39; Cross-Site Scripting                           | windows/remote/22185.txt
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>Sambar Server 5.x - Information Disclosure                                       | windows/remote/22434.txt
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>Sambar Server 5.x - Open Proxy / Authentication Bypass                           | windows/remote/24076.txt
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>Sambar Server 5.x/6.0/6.1 - &#39;results.stm&#39; indexname Cross-Site Scripting         | windows/remote/25694.txt
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>Sambar Server 5.x/6.0/6.1 - logout RCredirect Cross-Site Scripting               | windows/remote/25695.txt
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>Sambar Server 5.x/6.0/6.1 - Server Referer Cross-Site Scripting                  | windows/remote/25696.txt
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>Sambar Server 6.0 - &#39;results.stm&#39; POST Buffer Overflow                           | windows/dos/23664.py
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>Sambar Server 6.1 Beta 2 - &#39;show.asp?show&#39; Cross-Site Scripting                  | windows/remote/24161.txt
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>Sambar Server 6.1 Beta 2 - &#39;showini.asp&#39; Arbitrary File Access                   | windows/remote/24163.txt
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>Sambar Server 6.1 Beta 2 - &#39;showperf.asp?title&#39; Cross-Site Scripting             | windows/remote/24162.txt
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>--------------------------------------------------------------------------------- ---------------------------------
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>Shellcodes: No Results
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>┌──(root💀kali)-[/home/slehee]
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>└─# 
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a>
+<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>┌──(root💀kali)-[/home/slehee]
+<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>└─# searchsploit modssl 2
+<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>Exploits: No Results
+<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a>Shellcodes: No Results
+<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>
+<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a>┌──(root💀kali)-[/home/slehee]
+<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a>└─# searchsploit mod ssl 2
+<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a>--------------------------------------------------------------------------------- ---------------------------------
+<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a> Exploit Title                                                                   |  Path
+<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a>--------------------------------------------------------------------------------- ---------------------------------
+<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a>Apache mod_ssl 2.0.x - Remote Denial of Service                                  | linux/dos/24590.txt
+<a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a>Apache mod_ssl 2.8.x - Off-by-One HTAccess Buffer Overflow                       | multiple/dos/21575.txt
+<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a>Apache mod_ssl &lt; 2.8.7 OpenSSL - &#39;OpenFuck.c&#39; Remote Buffer Overflow             | unix/remote/21671.c
+<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a>Apache mod_ssl &lt; 2.8.7 OpenSSL - &#39;OpenFuck.c&#39; Remote Buffer Overflow             | unix/remote/21671.c
+<a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a>Apache mod_ssl &lt; 2.8.7 OpenSSL - &#39;OpenFuckV2.c&#39; Remote Buffer Overflow (1)       | unix/remote/764.c
+<a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a>Apache mod_ssl &lt; 2.8.7 OpenSSL - &#39;OpenFuckV2.c&#39; Remote Buffer Overflow (1)       | unix/remote/764.c
+<a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a>Apache mod_ssl &lt; 2.8.7 OpenSSL - &#39;OpenFuckV2.c&#39; Remote Buffer Overflow (2)       | unix/remote/47080.c
+<a id="__codelineno-3-89" name="__codelineno-3-89" href="#__codelineno-3-89"></a>Apache mod_ssl &lt; 2.8.7 OpenSSL - &#39;OpenFuckV2.c&#39; Remote Buffer Overflow (2)       | unix/remote/47080.c
+<a id="__codelineno-3-90" name="__codelineno-3-90" href="#__codelineno-3-90"></a>Apache mod_ssl OpenSSL &lt; 0.9.6d / &lt; 0.9.7-beta2 - &#39;openssl-too-open.c&#39; SSL2 KEY_ | unix/remote/40347.txt
+<a id="__codelineno-3-91" name="__codelineno-3-91" href="#__codelineno-3-91"></a>DomainMOD 4.11.01 - &#39;ssl-provider-name&#39; Cross-Site Scripting                     | php/webapps/46372.txt
+<a id="__codelineno-3-92" name="__codelineno-3-92" href="#__codelineno-3-92"></a>Microsoft Edge Chakra - &#39;InterpreterStackFrame::ProcessLinkFailedAsmJsModule&#39; In | windows/dos/42469.html
+<a id="__codelineno-3-93" name="__codelineno-3-93" href="#__codelineno-3-93"></a>Microsoft Edge Chakra - &#39;InterpreterStackFrame::ProcessLinkFailedAsmJsModule&#39; In | windows/dos/42470.html
+<a id="__codelineno-3-94" name="__codelineno-3-94" href="#__codelineno-3-94"></a>--------------------------------------------------------------------------------- ---------------------------------
+<a id="__codelineno-3-95" name="__codelineno-3-95" href="#__codelineno-3-95"></a>Shellcodes: No Results
+</code></pre></div>
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../5/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5-stages" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              5-stages
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../exp/" class="md-footer__link md-footer__link--next" aria-label="Next: Exploitation Basics" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Exploitation Basics
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 slehee
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.tabs"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
